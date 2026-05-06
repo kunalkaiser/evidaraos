@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AdjudicationRecord",
+  "type": "object",
+  "required": ["record_id", "reviewer_1_decision", "reviewer_2_decision", "agreement_status", "timestamp"],
+  "properties": {
+    "record_id": { "type": "string" },
+    "reviewer_1_decision": { "type": "string", "enum": ["include", "exclude", "uncertain", ""] },
+    "reviewer_2_decision": { "type": "string", "enum": ["include", "exclude", "uncertain", ""] },
+    "agreement_status": { "type": "string", "enum": ["agreement", "conflict"] },
+    "conflict_type": {
+      "type": "string",
+      "enum": [
+        "include_vs_exclude",
+        "different_exclusion_reason",
+        "confidence_disagreement",
+        "extraction_field_disagreement",
+        "needs_full_text_review",
+        ""
+      ]
+    },
+    "adjudicator_decision": { "type": "string", "enum": ["include", "exclude", "uncertain", ""] },
+    "final_decision": { "type": "string", "enum": ["include", "exclude", "uncertain", ""] },
+    "final_exclusion_reason": { "type": "string", "default": "" },
+    "adjudicator_id": { "type": "string", "default": "" },
+    "adjudicator_signature": { "type": "string", "default": "" },
+    "adjudicator_notes": { "type": "string", "default": "" },
+    "adjudicated_at": { "type": "string", "default": "" },
+    "timestamp": { "type": "string" }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "record_id": "sample-001",
+    "decision": "include",
+    "reason": "Relevant population, intervention, and safety/efficacy outcomes."
+  },
+  {
+    "record_id": "sample-002",
+    "decision": "exclude",
+    "reason": "Non-evidence editorial without original outcome data."
+  },
+  {
+    "record_id": "sample-003",
+    "decision": "include",
+    "reason": "Relevant safety outcome in dupilumab-treated atopic dermatitis patients."
+  }
+]

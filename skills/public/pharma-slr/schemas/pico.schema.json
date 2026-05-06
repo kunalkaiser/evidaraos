@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PICOPECOProtocol",
+  "type": "object",
+  "required": ["question", "framework", "population", "intervention_or_exposure", "outcomes"],
+  "properties": {
+    "question": { "type": "string" },
+    "framework": { "type": "string", "enum": ["PICO", "PECO"] },
+    "population": { "type": "string" },
+    "intervention_or_exposure": { "type": "string" },
+    "comparator": { "type": "string", "default": "not specified" },
+    "outcomes": { "type": "array", "items": { "type": "string" } },
+    "study_designs": { "type": "array", "items": { "type": "string" }, "default": [] },
+    "inclusion_criteria": { "type": "array", "items": { "type": "string" }, "default": [] },
+    "exclusion_criteria": { "type": "array", "items": { "type": "string" }, "default": [] },
+    "notes": { "type": "string", "default": "" }
+  },
+  "additionalProperties": false
+}

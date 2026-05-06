@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ScreeningDecision",
+  "type": "object",
+  "required": ["record_id", "decision", "reason"],
+  "properties": {
+    "record_id": { "type": "string" },
+    "decision": { "type": "string", "enum": ["include", "exclude", "uncertain"] },
+    "reason": { "type": "string" },
+    "matched_inclusion_criteria": { "type": "array", "items": { "type": "string" }, "default": [] },
+    "matched_exclusion_criteria": { "type": "array", "items": { "type": "string" }, "default": [] },
+    "reviewer": { "type": "string", "default": "agent" }
+  },
+  "additionalProperties": false
+}

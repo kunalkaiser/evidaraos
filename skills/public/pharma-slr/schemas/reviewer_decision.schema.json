@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ReviewerDecision",
+  "type": "object",
+  "required": ["record_id", "ai_decision", "human_action", "reviewer_id", "timestamp"],
+  "properties": {
+    "record_id": { "type": "string" },
+    "source": { "type": "string", "default": "" },
+    "ai_decision": { "type": "string", "enum": ["include", "exclude", "uncertain"] },
+    "ai_rationale": { "type": "string", "default": "" },
+    "ai_confidence": { "type": ["number", "string", "null"], "default": null },
+    "human_decision": { "type": "string", "enum": ["include", "exclude", "uncertain", ""], "default": "" },
+    "human_action": { "type": "string", "enum": ["agree", "override", "second-review-needed", "pending"] },
+    "exclusion_reason": { "type": "string", "default": "" },
+    "confidence": { "type": ["number", "string"], "default": "" },
+    "notes": { "type": "string", "default": "" },
+    "reviewer_id": { "type": "string" },
+    "timestamp": { "type": "string" }
+  },
+  "additionalProperties": true
+}

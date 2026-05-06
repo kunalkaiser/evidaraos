@@ -1,0 +1,21 @@
+[
+  {
+    "record_id": "sample-001",
+    "disease": "atopic dermatitis",
+    "intervention_exposure": "dupilumab",
+    "population": "adults with moderate-to-severe atopic dermatitis",
+    "study_design": "randomized trial",
+    "safety_outcomes": ["adverse events"],
+    "efficacy_outcomes": ["clinical response"],
+    "citation": { "doi": "10.0000/sample001", "pmid": "100001" }
+  },
+  {
+    "record_id": "sample-003",
+    "disease": "atopic dermatitis",
+    "intervention_exposure": "dupilumab",
+    "population": "dupilumab-treated atopic dermatitis patients",
+    "study_design": "observational cohort",
+    "safety_outcomes": ["ocular adverse events", "treatment discontinuation"],
+    "citation": { "doi": "10.0000/sample003", "pmid": "100003" }
+  }
+]

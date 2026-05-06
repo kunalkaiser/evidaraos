@@ -1,0 +1,28 @@
+[
+  {
+    "id": "sample-001",
+    "source": "pubmed",
+    "title": "Dupilumab safety in adults with moderate-to-severe atopic dermatitis",
+    "abstract": "Sample fixture: randomized trial abstract mentioning adults, dupilumab, atopic dermatitis, efficacy and adverse events.",
+    "doi": "10.0000/sample001",
+    "pmid": "100001",
+    "year": "2024"
+  },
+  {
+    "id": "sample-002",
+    "source": "crossref",
+    "title": "Editorial overview of eczema treatment access",
+    "abstract": "Sample fixture: editorial commentary without original outcome data.",
+    "doi": "10.0000/sample002",
+    "year": "2023"
+  },
+  {
+    "id": "sample-003",
+    "source": "pubmed",
+    "title": "Ocular adverse events with dupilumab in atopic dermatitis",
+    "abstract": "Sample fixture: observational cohort describing conjunctivitis and treatment discontinuation in patients receiving dupilumab.",
+    "doi": "10.0000/sample003",
+    "pmid": "100003",
+    "year": "2025"
+  }
+]

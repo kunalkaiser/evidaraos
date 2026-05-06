@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProjectManifest",
+  "type": "object",
+  "required": ["review_id", "generated_at", "tool_name", "tool_version", "runtime", "artifacts", "governance"],
+  "properties": {
+    "review_id": { "type": "string" },
+    "generated_at": { "type": "string" },
+    "tool_name": { "type": "string" },
+    "tool_version": { "type": "string" },
+    "runtime": { "type": "string" },
+    "fixture_only": { "type": "boolean" },
+    "fixture_warning": { "type": "string" },
+    "protocol_summary": { "type": ["object", "null"] },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "path", "sha256"],
+        "properties": {
+          "type": { "type": "string" },
+          "path": { "type": "string" },
+          "sha256": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "governance": {
+      "type": "object",
+      "properties": {
+        "human_review_required": { "type": "boolean" },
+        "dual_reviewer_adjudication": { "type": "boolean" },
+        "audit_trail_present": { "type": "boolean" },
+        "validation_report_present": { "type": "boolean" },
+        "final_report_present": { "type": "boolean" }
+      }
+    }
+  },
+  "additionalProperties": false
+}

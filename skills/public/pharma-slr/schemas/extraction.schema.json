@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvidenceExtraction",
+  "type": "object",
+  "required": ["record_id"],
+  "properties": {
+    "record_id": { "type": "string" },
+    "disease": { "type": "string", "default": "not reported" },
+    "study_design": { "type": "string", "default": "not reported" },
+    "population": { "type": "string", "default": "not reported" },
+    "sample_size": { "type": ["string", "integer"], "default": "not reported" },
+    "country": { "type": "string", "default": "not reported" },
+    "data_source": { "type": "string", "default": "not reported" },
+    "intervention_or_exposure": { "type": "string", "default": "not reported" },
+    "comparator": { "type": "string", "default": "not reported" },
+    "incidence": { "type": "string", "default": "not reported" },
+    "prevalence": { "type": "string", "default": "not reported" },
+    "mortality": { "type": "string", "default": "not reported" },
+    "outcomes": { "type": "array", "items": { "type": "string" }, "default": [] },
+    "key_findings": { "type": "array", "items": { "type": "string" }, "default": [] },
+    "safety_findings": { "type": "array", "items": { "type": "string" }, "default": [] },
+    "safety_outcomes": { "type": "array", "items": { "type": "string" }, "default": [] },
+    "efficacy_outcomes": { "type": "array", "items": { "type": "string" }, "default": [] },
+    "follow_up": { "type": "string", "default": "not reported" },
+    "limitations": { "type": "array", "items": { "type": "string" }, "default": [] },
+    "confidence": { "type": ["number", "string"], "default": "not reported" },
+    "risk_of_bias_placeholder": { "type": "string", "enum": ["low", "some concerns", "high", "unclear"], "default": "unclear" },
+    "full_text_eligibility_notes": { "type": "string", "default": "" },
+    "citation": {
+      "type": "object",
+      "properties": {
+        "doi": { "type": "string" },
+        "pmid": { "type": "string" },
+        "url": { "type": "string" }
+      }
+    }
+  },
+  "additionalProperties": true
+}

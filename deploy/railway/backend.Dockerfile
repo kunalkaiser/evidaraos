@@ -37,8 +37,8 @@ WORKDIR /app
 
 COPY backend ./backend
 COPY skills ./skills
-COPY deploy/railway/config.yaml ./backend/config.yaml
-COPY deploy/railway/extensions_config.json ./backend/extensions_config.json
+COPY deploy/railway/evidaraos.config.yml ./backend/config.yaml
+COPY deploy/railway/evidaraos.extensions.json ./backend/extensions_config.json
 
 RUN sh -c "cd backend && UV_INDEX_URL=${UV_INDEX_URL:-https://pypi.org/simple} uv sync ${UV_EXTRAS:+--extra $UV_EXTRAS}"
 

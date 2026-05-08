@@ -75,6 +75,7 @@ Important:
 - `DEER_FLOW_EXTENSIONS_CONFIG_PATH` should be `/app/backend/extensions_config.json`.
 - `DEER_FLOW_SKILLS_PATH` should be `/app/skills`.
 - `GATEWAY_CORS_ORIGINS` and `DEER_FLOW_TRUSTED_ORIGINS` should include the frontend public URL.
+- The Railway Dockerfile copies `deploy/railway/evidaraos.config.yml` and `deploy/railway/evidaraos.extensions.json` into the backend image as the runtime config files.
 
 ## Sandbox Note
 

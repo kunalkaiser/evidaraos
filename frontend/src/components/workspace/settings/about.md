@@ -1,55 +1,21 @@
-# 🦌 [About DeerFlow 2.0](https://github.com/bytedance/deer-flow)
+# About EvidaraOS
 
-> **From Open Source, Back to Open Source**
+EvidaraOS is a precision evidence workspace for life-sciences teams. It supports evidence modules for systematic literature review, HEOR model input preparation, payer value dossiers, regulatory evidence briefings, drug repurposing evidence review, and governance workflows.
 
-**DeerFlow** (**D**eep **E**xploration and **E**fficient **R**esearch **Flow**) is a community-driven SuperAgent harness that researches, codes, and creates.
-With the help of sandboxes, memories, tools and skills, it handles
-different levels of tasks that could take minutes to hours.
+The workspace separates AI-assisted work from human decisions. Evidence records, reviewer decisions, validation outputs, limitations, and audit metadata should remain traceable.
 
 ---
 
-## 🌟 GitHub Repository
+## Open-source runtime attribution
 
-Explore DeerFlow on GitHub: [github.com/bytedance/deer-flow](https://github.com/bytedance/deer-flow)
+EvidaraOS uses **DeerFlow** as an MIT-licensed open-source agent runtime and harness.
 
-## 🌐 Official Website
+Upstream project: [github.com/bytedance/deer-flow](https://github.com/bytedance/deer-flow)
 
-Visit the official website of DeerFlow: [deerflow.tech](https://deerflow.tech/)
-
-## 📧 Support
-
-If you have any questions or need help, please contact us at [support@deerflow.tech](mailto:support@deerflow.tech).
+Full attribution and third-party notices are available at [/legal/third-party](/legal/third-party).
 
 ---
 
-## 📜 License
+## Product boundary
 
-DeerFlow is proudly open source and distributed under the **MIT License**.
-
----
-
-## 🙌 Acknowledgments
-
-We extend our heartfelt gratitude to the open source projects and contributors who have made DeerFlow a reality. We truly stand on the shoulders of giants.
-
-### Core Frameworks
-
-- **[LangChain](https://github.com/langchain-ai/langchain)**: A phenomenal framework that powers our LLM interactions and chains.
-- **[LangGraph](https://github.com/langchain-ai/langgraph)**: Enabling sophisticated multi-agent orchestration.
-- **[Next.js](https://nextjs.org/)**: A cutting-edge framework for building web applications.
-
-### UI Libraries
-
-- **[Shadcn](https://ui.shadcn.com/)**: Minimalistic components that power our UI.
-- **[SToneX](https://github.com/stonexer)**: For his invaluable contribution to token-by-token visual effects.
-
-These outstanding projects form the backbone of DeerFlow and exemplify the transformative power of open source collaboration.
-
-### Special Thanks
-
-Finally, we want to express our heartfelt gratitude to the core authors of DeerFlow 1.0 and 2.0:
-
-- **[Daniel Walnut](https://github.com/hetaoBackend/)**
-- **[Henry Li](https://github.com/magiccube/)**
-
-Without their vision, passion and dedication, `DeerFlow` would not be what it is today.
+Fixture examples are for smoke testing and product demonstration only. They are not scientific validation evidence, clinical conclusions, health-economic findings, payer predictions, or regulatory advice.

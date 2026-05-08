@@ -1,14 +1,12 @@
 "use client";
 
 import {
-  BugIcon,
   ChevronsUpDown,
-  GlobeIcon,
   InfoIcon,
-  MailIcon,
   Settings2Icon,
   SettingsIcon,
 } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import {
@@ -27,7 +25,6 @@ import {
 } from "@/components/ui/sidebar";
 import { useI18n } from "@/core/i18n/hooks";
 
-import { GithubIcon } from "./github-icon";
 import { SettingsDialog } from "./settings";
 
 function NavMenuButtonContent({
@@ -98,43 +95,18 @@ export function WorkspaceNavMenu() {
                     {t.common.settings}
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
-                  <a
-                    href="https://deerflow.tech/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <Link href="/platform">
                     <DropdownMenuItem>
-                      <GlobeIcon />
-                      {t.workspace.officialWebsite}
+                      <InfoIcon />
+                      Platform
                     </DropdownMenuItem>
-                  </a>
-                  <a
-                    href="https://github.com/bytedance/deer-flow"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  </Link>
+                  <Link href="/legal/third-party">
                     <DropdownMenuItem>
-                      <GithubIcon />
-                      {t.workspace.visitGithub}
+                      <InfoIcon />
+                      Runtime attribution
                     </DropdownMenuItem>
-                  </a>
-                  <DropdownMenuSeparator />
-                  <a
-                    href="https://github.com/bytedance/deer-flow/issues"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <DropdownMenuItem>
-                      <BugIcon />
-                      {t.workspace.reportIssue}
-                    </DropdownMenuItem>
-                  </a>
-                  <a href="mailto:support@deerflow.tech">
-                    <DropdownMenuItem>
-                      <MailIcon />
-                      {t.workspace.contactUs}
-                    </DropdownMenuItem>
-                  </a>
+                  </Link>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem

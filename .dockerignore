@@ -69,3 +69,9 @@ backend/.coverage
 !README.md
 !frontend/README.md
 !backend/README.md
+
+# Railway backend deploy needs the public skill catalog packaged with the
+# gateway image. Keep local/custom skills excluded by default.
+!skills/
+!skills/public/
+!skills/public/**

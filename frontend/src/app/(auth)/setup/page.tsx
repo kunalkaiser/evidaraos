@@ -157,7 +157,7 @@ export default function SetupPage() {
     return (
       <div className="bg-background flex min-h-screen items-center justify-center">
         <FlickeringGrid
-          className="absolute inset-0 z-0 mask-[url(/images/deer.svg)] mask-size-[100vw] mask-center mask-no-repeat md:mask-size-[72vh]"
+          className="absolute inset-0 z-0 opacity-35"
           squareSize={4}
           gridGap={4}
           color={actualTheme === "dark" ? "white" : "black"}
@@ -166,10 +166,10 @@ export default function SetupPage() {
         />
         <div className="border-border/20 bg-background/5 w-full max-w-md space-y-6 rounded-3xl border p-8 backdrop-blur-sm">
           <div className="text-center">
-            <h1 className="font-serif text-3xl">DeerFlow</h1>
+            <h1 className="font-serif text-3xl">EvidaraOS</h1>
             <p className="text-muted-foreground mt-2">Create admin account</p>
             <p className="text-muted-foreground mt-1 text-xs">
-              Set up the administrator account to get started.
+              Set up the administrator account for the evidence workspace.
             </p>
           </div>
           <form onSubmit={handleInitAdmin} className="space-y-2">
@@ -228,7 +228,7 @@ export default function SetupPage() {
   return (
     <div className="bg-background flex min-h-screen items-center justify-center">
       <FlickeringGrid
-        className="absolute inset-0 z-0 mask-[url(/images/deer.svg)] mask-size-[100vw] mask-center mask-no-repeat md:mask-size-[72vh]"
+        className="absolute inset-0 z-0 opacity-35"
         squareSize={4}
         gridGap={4}
         color={actualTheme === "dark" ? "white" : "black"}
@@ -237,12 +237,12 @@ export default function SetupPage() {
       />
       <div className="border-border/20 bg-background/5 w-full max-w-md space-y-6 rounded-3xl border p-8 backdrop-blur-sm">
         <div className="text-center">
-          <h1 className="font-serif text-3xl">DeerFlow</h1>
+          <h1 className="font-serif text-3xl">EvidaraOS</h1>
           <p className="text-muted-foreground mt-2">
             Complete admin account setup
           </p>
           <p className="text-muted-foreground mt-1 text-xs">
-            Set your real email and a new password.
+            Set your workspace email and a new password.
           </p>
         </div>
         <form onSubmit={handleChangePassword} className="space-y-4">

@@ -53,10 +53,10 @@ Create a second Railway service from the same repo.
 Settings:
 
 - Builder: Dockerfile
-- Dockerfile path: `backend/Dockerfile`
+- Dockerfile path: `deploy/railway/backend.Dockerfile`
 - Docker target: runtime/default
 - Public domain: enabled
-- Port: `8001`
+- Port: Railway should inject `$PORT`; the image defaults to `8001` locally
 - Volume: mount at `/app/backend/.deer-flow`
 
 Variables:
@@ -72,6 +72,7 @@ Important:
 - `DEER_FLOW_CONFIG_PATH` should be `/app/backend/config.yaml`.
 - `DEER_FLOW_EXTENSIONS_CONFIG_PATH` should be `/app/backend/extensions_config.json`.
 - `DEER_FLOW_SKILLS_PATH` should be `/app/skills`.
+- `GATEWAY_CORS_ORIGINS` and `DEER_FLOW_TRUSTED_ORIGINS` should include the frontend public URL.
 
 ## Sandbox Note
 

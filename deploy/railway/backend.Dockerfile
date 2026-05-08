@@ -40,8 +40,7 @@ COPY skills ./skills
 COPY deploy/railway/config.yaml ./backend/config.yaml
 COPY deploy/railway/extensions_config.json ./backend/extensions_config.json
 
-RUN --mount=type=cache,id=evidaraos-uv-cache,target=/root/.cache/uv \
-    sh -c "cd backend && UV_INDEX_URL=${UV_INDEX_URL:-https://pypi.org/simple} uv sync ${UV_EXTRAS:+--extra $UV_EXTRAS}"
+RUN sh -c "cd backend && UV_INDEX_URL=${UV_INDEX_URL:-https://pypi.org/simple} uv sync ${UV_EXTRAS:+--extra $UV_EXTRAS}"
 
 FROM python:3.12-slim-bookworm
 

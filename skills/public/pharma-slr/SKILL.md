@@ -250,6 +250,17 @@ Save the report as `/mnt/user-data/outputs/evidenceos-pharma-slr-<topic-slug>-<Y
 
 ## Validation, Governance, and Human Oversight
 
+The skill also supports an auditable evidence-intelligence layer for source traceability and living evidence updates:
+
+```bash
+python skills/public/pharma-slr/scripts/evidence_signal_extraction.py records.json --output evidence_signals.json
+python skills/public/pharma-slr/scripts/evidence_map_builder.py evidence_signals.json --output evidence_map.json
+python skills/public/pharma-slr/scripts/evidence_path_explainer.py evidence_map.json --output evidence_paths.json --markdown-output evidence_paths.md
+python skills/public/pharma-slr/scripts/living_evidence_monitor.py --previous previous_evidence_map.json --current evidence_map.json --output living_evidence_update.json
+```
+
+Evidence maps organize review signals only. They do not establish evidence quality, causal effect, clinical benefit, payer value, or regulatory acceptability without human review.
+
 This skill supports validation-ready AI-assisted screening and extraction. It does not claim autonomous regulatory-grade review. Human reviewers remain responsible for final inclusion, exclusion, extraction acceptance, and adjudication.
 
 Supported validation/governance steps:
@@ -282,9 +293,16 @@ python skills/public/pharma-slr/scripts/adjudication_workflow.py \
   --adjudicator-decisions adjudicator_decisions.json \
   --adjudicator-id adjudicator_001 \
   --adjudicator-signature "reviewed-by-adjudicator-001" \
+  --lock-policy require_adjudicator_signature \
   --locked-output locked_labels.json \
   --output adjudicated.json
 ```
+
+Lock policies:
+
+- `agreement_or_adjudicated`: lock agreed dual-review labels and adjudicated conflict labels.
+- `adjudicated_only`: lock only labels with an adjudicator decision.
+- `require_adjudicator_signature`: lock only labels carrying adjudicator ID and signature metadata; use this for stricter regulated/HTA audit packs.
 
 Supported conflict types:
 
@@ -294,7 +312,7 @@ Supported conflict types:
 - `extraction_field_disagreement`
 - `needs_full_text_review`
 
-Adjudication output includes inter-reviewer raw agreement, Cohen's kappa, conflict counts, a worklist, schema validation status, and locked final labels when adjudicator decisions are supplied. Final decisions must be completed by a human adjudicator or approved dual-review process before regulator-facing inclusion/exclusion counts are treated as final.
+Adjudication output includes inter-reviewer raw agreement, Cohen's kappa, conflict counts, a worklist, schema validation status, and locked final labels according to the selected lock policy. Final decisions must be completed by a human adjudicator or approved dual-review process before regulator-facing inclusion/exclusion counts are treated as final.
 
 ### Screening Performance Evaluation
 
@@ -360,10 +378,11 @@ Use `scripts/schema_validate.py` for dependency-free validation against local ph
 ```bash
 python skills/public/pharma-slr/scripts/schema_validate.py \
   --schema skills/public/pharma-slr/schemas/adjudication.schema.json \
-  --json adjudicated_record.json
+  --json adjudicated.json \
+  --items-key adjudication_records
 ```
 
-This validator supports the schema subset used by this skill. It is not a full JSON Schema Draft 2020-12 implementation, but it catches required fields, type mismatches, enum violations, array item errors, minimum values, and disallowed additional properties where specified.
+This validator supports the schema subset used by this skill. Use `--items-key` when a script output wraps an array of records, such as `adjudication_records` or `locked_labels`. It is not a full JSON Schema Draft 2020-12 implementation, but it catches required fields, type mismatches, enum violations, array item errors, minimum values, and disallowed additional properties where specified.
 
 ### Project Manifest
 

@@ -1,0 +1,23 @@
+{
+  "fixture_only": true,
+  "records": [
+    {
+      "record_id": "kg-fixture-001",
+      "source": "fixture-literature-001",
+      "title": "Dupilumab, IL4R signaling, and type 2 inflammation in atopic dermatitis",
+      "abstract": "Fixture-only record: dupilumab inhibits IL4R signaling in type 2 inflammation and treats atopic dermatitis. Safety discussion includes conjunctivitis."
+    },
+    {
+      "record_id": "kg-fixture-002",
+      "source": "fixture-literature-002",
+      "title": "IL13 pathway association with asthma",
+      "abstract": "Fixture-only record: IL13 and the Th2 pathway are associated with asthma. Further studies are required to test clinical efficacy, dose, comparator, and safety."
+    },
+    {
+      "record_id": "kg-fixture-003",
+      "source": "fixture-literature-003",
+      "title": "Type 2 inflammation and respiratory phenotype signals",
+      "abstract": "Fixture-only record: eosinophils and IgE are biomarkers of type 2 inflammation in patients with asthma and eosinophilia."
+    }
+  ]
+}

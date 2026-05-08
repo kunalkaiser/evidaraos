@@ -20,6 +20,11 @@ CONFLICT_TYPES = {
 }
 
 LABELS = ["include", "exclude", "uncertain"]
+LOCK_POLICIES = {
+    "agreement_or_adjudicated",
+    "adjudicated_only",
+    "require_adjudicator_signature",
+}
 SCHEMA_PATH = Path(__file__).resolve().parents[1] / "schemas" / "adjudication.schema.json"
 
 
@@ -161,11 +166,15 @@ def _apply_adjudicator_decisions(
     adjudicator_decisions: list[dict],
     adjudicator_id: str = "",
     adjudicator_signature: str = "",
+    lock_policy: str = "agreement_or_adjudicated",
 ) -> tuple[list[dict], list[dict]]:
+    if lock_policy not in LOCK_POLICIES:
+        raise ValueError(f"lock_policy must be one of {sorted(LOCK_POLICIES)}")
     decisions_by_id = _adjudicator_by_id(adjudicator_decisions)
     locked_labels = []
     for row in rows:
         adjudicator = decisions_by_id.get(row["record_id"])
+        row["lock_policy"] = lock_policy
         if adjudicator:
             decision = _decision(adjudicator) or str(adjudicator.get("adjudicator_decision") or "").lower()
             row["adjudicator_decision"] = decision
@@ -179,7 +188,16 @@ def _apply_adjudicator_decisions(
             row.setdefault("adjudicator_id", "")
             row.setdefault("adjudicator_signature", "")
             row.setdefault("adjudicated_at", "")
-        if row.get("final_decision"):
+            if lock_policy == "require_adjudicator_signature" and row.get("agreement_status") == "agreement":
+                row["adjudicator_id"] = adjudicator_id
+                row["adjudicator_signature"] = adjudicator_signature
+                row["adjudicated_at"] = datetime.now(timezone.utc).isoformat() if adjudicator_id and adjudicator_signature else ""
+        can_lock = bool(row.get("final_decision"))
+        if lock_policy == "adjudicated_only":
+            can_lock = can_lock and bool(row.get("adjudicator_decision"))
+        if lock_policy == "require_adjudicator_signature":
+            can_lock = can_lock and bool(row.get("adjudicator_id")) and bool(row.get("adjudicator_signature"))
+        if can_lock:
             locked_labels.append(
                 {
                     "record_id": row["record_id"],
@@ -190,6 +208,7 @@ def _apply_adjudicator_decisions(
                     "source": "dual_reviewer_adjudication",
                     "adjudicator_id": row.get("adjudicator_id", ""),
                     "adjudicator_signature": row.get("adjudicator_signature", ""),
+                    "lock_policy": lock_policy,
                 }
             )
     return rows, locked_labels
@@ -201,6 +220,7 @@ def adjudicate(
     adjudicator_decisions: list[dict] | None = None,
     adjudicator_id: str = "",
     adjudicator_signature: str = "",
+    lock_policy: str = "agreement_or_adjudicated",
 ) -> dict:
     now = datetime.now(timezone.utc).isoformat()
     one_by_id = {_record_id(item): item for item in reviewer_one if _record_id(item)}
@@ -230,10 +250,17 @@ def adjudicate(
                 "adjudicator_id": "",
                 "adjudicator_signature": "",
                 "adjudicated_at": "",
+                "lock_policy": lock_policy,
                 "timestamp": now,
             }
         )
-    rows, locked_labels = _apply_adjudicator_decisions(rows, adjudicator_decisions or [], adjudicator_id, adjudicator_signature)
+    rows, locked_labels = _apply_adjudicator_decisions(
+        rows,
+        adjudicator_decisions or [],
+        adjudicator_id,
+        adjudicator_signature,
+        lock_policy,
+    )
     inter_reviewer = _inter_reviewer_metrics(one_by_id, two_by_id, all_ids)
     summary = {
         "records_compared": len(rows),
@@ -241,6 +268,8 @@ def adjudicate(
         "conflicts": sum(1 for row in rows if row["agreement_status"] == "conflict"),
         "locked_final_labels": len(locked_labels),
         "pending_adjudication": sum(1 for row in rows if not row.get("final_decision")),
+        "pending_locked_label": sum(1 for row in rows if row.get("final_decision") and row["record_id"] not in {label["record_id"] for label in locked_labels}),
+        "lock_policy": lock_policy,
         "inter_reviewer_agreement": inter_reviewer,
         "conflict_type_counts": {
             conflict_type: sum(1 for row in rows if row["conflict_type"] == conflict_type)
@@ -273,6 +302,12 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--adjudicator-decisions", help="optional adjudicator decisions JSON")
     parser.add_argument("--adjudicator-id", default="", help="adjudicator identifier to attach to locked labels")
     parser.add_argument("--adjudicator-signature", default="", help="adjudicator signature/attestation string")
+    parser.add_argument(
+        "--lock-policy",
+        choices=sorted(LOCK_POLICIES),
+        default="agreement_or_adjudicated",
+        help="label locking policy: lock reviewer agreements and adjudicated conflicts, only adjudicated labels, or require adjudicator id/signature for every locked label",
+    )
     parser.add_argument("--output", help="optional output JSON file")
     parser.add_argument("--locked-output", help="optional locked final labels JSON output")
     return parser
@@ -287,6 +322,7 @@ def main() -> int:
             _load_optional(args.adjudicator_decisions),
             args.adjudicator_id,
             args.adjudicator_signature,
+            args.lock_policy,
         )
         _write(args.output, result)
         if args.locked_output:

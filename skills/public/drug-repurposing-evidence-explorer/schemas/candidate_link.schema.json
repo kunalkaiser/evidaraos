@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvidaraOS Repurposing Candidate Link",
+  "type": "object",
+  "required": ["candidate_links"],
+  "properties": {
+    "candidate_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["candidate_pair", "link_prediction_score", "evidence_paths"],
+        "properties": {
+          "drug": { "type": "string" },
+          "disease": { "type": "string" },
+          "candidate_pair": { "type": "string" },
+          "link_prediction_score": { "type": "number" },
+          "evidence_paths": { "type": "array" },
+          "missing_evidence": { "type": "array", "items": { "type": "string" } },
+          "label": { "type": "string" },
+          "human_review_required": { "type": "boolean" }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

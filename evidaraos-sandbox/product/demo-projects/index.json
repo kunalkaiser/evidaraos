@@ -1,0 +1,15 @@
+{
+  "fixture_warning": "These results are from sample fixture data and are not validation evidence.",
+  "projects": [
+    "demo-dupilumab-ad-slr.json",
+    "demo-dupilumab-heor-inputs.json",
+    "demo-dupilumab-payer-dossier.json",
+    "demo-dupilumab-regulatory-briefing.json",
+    "demo-dupilumab-repurposing-graph.json"
+  ],
+  "usage_rules": [
+    "Use demo projects to render UI states, screenshots, and product walkthroughs.",
+    "Do not use fixture outputs as performance evidence.",
+    "Do not publish clinical, economic, payer, regulatory, or therapeutic conclusions from fixture projects."
+  ]
+}

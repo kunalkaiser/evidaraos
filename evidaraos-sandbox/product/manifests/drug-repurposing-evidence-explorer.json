@@ -1,0 +1,64 @@
+{
+  "id": "drug_repurposing_explorer",
+  "display_name": "Drug Repurposing Evidence Explorer",
+  "short_name": "Repurposing Explorer",
+  "mapped_skill": "drug-repurposing-evidence-explorer",
+  "status": "connected skill",
+  "public_route": "/solutions/drug-repurposing",
+  "workspace_route": "/workspace/modules/drug-repurposing",
+  "positioning": {
+    "one_liner": "Graph-assisted repurposing hypothesis exploration with clinician review guardrails.",
+    "primary_users": ["R&D strategy", "Translational science", "Business development"],
+    "jobs_to_be_done": [
+      "Explore compound-to-indication and indication-to-compound hypotheses.",
+      "Map mechanisms, target-disease associations, clinical signals, and safety transfer.",
+      "Rank sparse-evidence disease hypotheses using transparent disease similarity support.",
+      "Separate indication signals from contraindication and safety-risk signals.",
+      "Compare method-family signals instead of overfitting product claims to one paper.",
+      "Expose false-positive risk and false-negative gap checks before validation claims.",
+      "Generate transparent graph paths behind candidate links.",
+      "Route explanation paths, external usage signals, and validation gaps for scientific review."
+    ]
+  },
+  "workflow": [
+    { "step": 1, "label": "Mode Detection" },
+    { "step": 2, "label": "Entity and Relation Extraction" },
+    { "step": 3, "label": "Knowledge Graph Build" },
+    { "step": 4, "label": "Disease Similarity Support" },
+    { "step": 5, "label": "Candidate Link Scoring" },
+    { "step": 6, "label": "Indication and Contraindication Separation" },
+    { "step": 7, "label": "Method-Family Signal Comparison" },
+    { "step": 8, "label": "False-Positive and False-Negative Risk Checks" },
+    { "step": 9, "label": "Safety Transfer Assessment" },
+    { "step": 10, "label": "Evidence Path Explanation" },
+    { "step": 11, "label": "Explanation Review Queue" },
+    { "step": 12, "label": "Validation Checklist and Audit" }
+  ],
+  "governance": {
+    "human_review": true,
+    "audit_trail": true,
+    "validation_report": true,
+    "fixture_warning": true
+  },
+  "artifacts": [
+    { "id": "knowledge_graph", "label": "Knowledge Graph", "type": "evidence_map" },
+    { "id": "candidate_links", "label": "Candidate Links", "type": "extraction" },
+    { "id": "zero_shot_candidates", "label": "Zero-Shot Hypothesis Ranking", "type": "analysis" },
+    { "id": "method_evidence_matrix", "label": "Method Evidence Matrix", "type": "analysis" },
+    { "id": "error_risk_report", "label": "False-Positive and False-Negative Risk Report", "type": "validation" },
+    { "id": "evidence_paths", "label": "Evidence Path Explanation", "type": "report" },
+    { "id": "external_usage_signal", "label": "External Usage Signal Review", "type": "validation" },
+    { "id": "safety_transfer", "label": "Safety Transfer Assessment", "type": "validation" },
+    { "id": "validation_checklist", "label": "Validation Checklist", "type": "validation" },
+    { "id": "audit_trail", "label": "Audit Trail", "type": "audit" }
+  ],
+  "demo_project_id": "demo_dupilumab_repurposing_graph",
+  "guardrails": [
+    "Do not present candidates as recommended therapy.",
+    "Do not treat co-mention, relation extraction, or graph path scoring as causal proof.",
+    "Do not claim TxGNN-level or foundation-model performance without an actual validated model integration and benchmark.",
+    "Do not turn a single research article into a product claim; convert it into a governed method signal.",
+    "Treat external usage signals as confounded review inputs, not causal or validation evidence.",
+    "Every candidate must remain hypothesis-only until reviewed and validated."
+  ]
+}

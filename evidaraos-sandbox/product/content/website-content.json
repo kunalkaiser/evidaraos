@@ -1,0 +1,115 @@
+{
+  "brand": {
+    "name": "EvidaraOS",
+    "descriptor": "Precision evidence operating system for life sciences teams",
+    "runtime_note": "Built on the credited DeerFlow open-source agent runtime/harness."
+  },
+  "homepage": {
+    "route": "/",
+    "hero": {
+      "headline": "Precision evidence generation for life sciences.",
+      "subheadline": "EvidaraOS helps evidence, HEOR, regulatory, and market access teams turn biomedical literature, clinical evidence, and real-world data into traceable, validation-ready evidence workflows.",
+      "primary_cta": "Request a demo",
+      "secondary_cta": "Explore platform"
+    },
+    "problem": {
+      "headline": "Evidence work is slowed by noise, fragmentation, and weak provenance.",
+      "points": [
+        "Manual literature review creates large screening burden.",
+        "Clinical, economic, payer, and regulatory evidence often live in disconnected artifacts.",
+        "AI-assisted outputs are hard to trust without human review, validation, and audit trails."
+      ]
+    },
+    "platform": {
+      "headline": "A governed evidence intelligence layer.",
+      "modules": [
+        "Precision Literature Review",
+        "HEOR Evidence Modeler",
+        "Payer Value Dossier Builder",
+        "Regulatory Evidence Briefing",
+        "Drug Repurposing Evidence Explorer",
+        "Evidence Governance & Validation Layer"
+      ]
+    },
+    "workflow": {
+      "headline": "From question to audit-ready evidence package.",
+      "steps": ["Question", "Protocol", "Retrieval", "Evidence Map", "Human Review", "Extraction", "Validation", "Report", "Audit"]
+    },
+    "governance": {
+      "headline": "Human oversight is part of the product, not an afterthought.",
+      "points": [
+        "Structured reviewer queues and adjudication.",
+        "Validation reports with fixture-only warnings when applicable.",
+        "Audit trails with source provenance, tool metadata, and project manifests."
+      ]
+    }
+  },
+  "routes": [
+    {
+      "route": "/platform",
+      "title": "Platform",
+      "headline": "Evidence workflows with traceability built in.",
+      "summary": "EvidaraOS connects question framing, biomedical retrieval, evidence mapping, extraction, human review, validation, reporting, and audit trails across life-sciences evidence workflows."
+    },
+    {
+      "route": "/solutions/systematic-literature-review",
+      "title": "Precision Literature Review",
+      "headline": "Control recall, precision, and screening burden.",
+      "module_manifest": "precision-literature-review.json"
+    },
+    {
+      "route": "/solutions/heor",
+      "title": "HEOR Evidence Modeler",
+      "headline": "Prepare traceable HEOR model inputs for expert review.",
+      "module_manifest": "heor-evidence-modeler.json"
+    },
+    {
+      "route": "/solutions/payer-value-dossier",
+      "title": "Payer Value Dossier Builder",
+      "headline": "Build payer evidence packages with claim traceability.",
+      "module_manifest": "payer-value-dossier-builder.json"
+    },
+    {
+      "route": "/solutions/regulatory-briefing",
+      "title": "Regulatory Evidence Briefing",
+      "headline": "Structure benefit-risk evidence conservatively.",
+      "module_manifest": "regulatory-evidence-briefing.json"
+    },
+    {
+      "route": "/solutions/drug-repurposing",
+      "title": "Drug Repurposing Evidence Explorer",
+      "headline": "Explore repurposing hypotheses through transparent evidence paths.",
+      "module_manifest": "drug-repurposing-evidence-explorer.json"
+    },
+    {
+      "route": "/evidence-engine",
+      "title": "Evidence Engine",
+      "headline": "Retrieval, evidence maps, provenance, and governed artifacts.",
+      "summary": "The EvidenceOS engine organizes records, claims, parameters, findings, and graph paths into structured artifacts that can be reviewed, validated, and audited."
+    },
+    {
+      "route": "/governance",
+      "title": "Governance",
+      "headline": "Validation-ready controls for AI-assisted evidence work.",
+      "module_manifest": "evidence-governance-layer.json"
+    },
+    {
+      "route": "/data-methodology",
+      "title": "Data and Methodology",
+      "headline": "Transparent sources, limitations, and no unsupported claims.",
+      "summary": "EvidenceOS workflows use public biomedical and evidence sources where configured. Demo data is fixture-only and never validation evidence."
+    },
+    {
+      "route": "/demo",
+      "title": "Request a Demo",
+      "headline": "See governed evidence workflows for your team.",
+      "summary": "The initial demo should show configured workflows and fixture-labeled examples only until live execution and validated benchmark data are available."
+    }
+  ],
+  "language_guardrails": [
+    "Do not claim regulatory-grade, publication-grade, or validated performance without benchmark evidence.",
+    "Do not claim access to proprietary real-world data networks unless integrated.",
+    "Do not expose raw DeerFlow skill names as public product navigation.",
+    "Do not describe AI as autonomous decision-making for clinical, regulatory, payer, or development decisions."
+  ]
+}

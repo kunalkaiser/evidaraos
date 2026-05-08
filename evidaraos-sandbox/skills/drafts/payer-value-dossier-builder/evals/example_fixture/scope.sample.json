@@ -1,0 +1,11 @@
+{
+  "fixture_only": true,
+  "dossier_scope": {
+    "product": "dupilumab",
+    "indication": "atopic dermatitis",
+    "market": "US",
+    "comparator": "standard of care"
+  },
+  "sections": ["executive_summary", "disease_burden", "clinical_evidence", "claim_traceability"]
+}
+

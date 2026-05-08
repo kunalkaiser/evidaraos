@@ -1,0 +1,53 @@
+{
+  "id": "precision_literature_review",
+  "display_name": "Precision Literature Review",
+  "short_name": "Precision SLR",
+  "mapped_skill": "pharma-slr",
+  "status": "connected skill",
+  "public_route": "/solutions/systematic-literature-review",
+  "workspace_route": "/workspace/modules/precision-slr",
+  "positioning": {
+    "one_liner": "Precision-controlled systematic literature review for biomedical evidence teams.",
+    "primary_users": ["Evidence generation", "Medical affairs", "HEOR", "Regulatory"],
+    "jobs_to_be_done": [
+      "Frame review questions as PICO or PECO protocols.",
+      "Balance recall and precision across biomedical literature retrieval.",
+      "Prioritize screening while preserving human review and recall guardrails.",
+      "Generate PRISMA-style summaries, evidence tables, validation reports, and audit trails."
+    ]
+  },
+  "workflow": [
+    { "step": 1, "label": "PICO/PECO Protocol" },
+    { "step": 2, "label": "Concept Expansion" },
+    { "step": 3, "label": "Multi-Source Retrieval" },
+    { "step": 4, "label": "Deduplication" },
+    { "step": 5, "label": "Precision Scoring" },
+    { "step": 6, "label": "Screening and Adjudication" },
+    { "step": 7, "label": "Evidence Extraction" },
+    { "step": 8, "label": "PRISMA and Validation" },
+    { "step": 9, "label": "Final Report and Audit Pack" }
+  ],
+  "governance": {
+    "human_review": true,
+    "dual_reviewer_adjudication": true,
+    "audit_trail": true,
+    "validation_report": true,
+    "fixture_warning": true
+  },
+  "artifacts": [
+    { "id": "protocol", "label": "Protocol", "type": "protocol" },
+    { "id": "search_strategy", "label": "Search Strategy", "type": "retrieval" },
+    { "id": "evidence_map", "label": "Evidence Map", "type": "evidence_map" },
+    { "id": "screening_queue", "label": "Screening Queue", "type": "human_review" },
+    { "id": "evidence_table", "label": "Evidence Table", "type": "extraction" },
+    { "id": "prisma_summary", "label": "PRISMA Summary", "type": "report" },
+    { "id": "validation_report", "label": "Validation Report", "type": "validation" },
+    { "id": "audit_trail", "label": "Audit Trail", "type": "audit" }
+  ],
+  "demo_project_id": "demo_dupilumab_ad_slr",
+  "guardrails": [
+    "Do not present fixture smoke tests as validation evidence.",
+    "Do not claim automated inclusion/exclusion decisions are final without human review.",
+    "Do not optimize precision in a way that removes recall guardrails or sentinel-paper checks."
+  ]
+}

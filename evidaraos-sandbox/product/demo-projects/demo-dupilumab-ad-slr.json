@@ -1,0 +1,26 @@
+{
+  "project_id": "demo_dupilumab_ad_slr",
+  "module_id": "precision_literature_review",
+  "title": "Dupilumab in Atopic Dermatitis: Precision SLR Demo",
+  "fixture_only": true,
+  "fixture_warning": "These results are from sample fixture data and are not validation evidence.",
+  "workflow_status": "fixture_ready",
+  "question": "What is the safety and efficacy evidence for dupilumab in atopic dermatitis?",
+  "artifacts": [
+    { "id": "protocol", "label": "PICO/PECO Protocol", "status": "configured_workflow", "source": "skills/public/pharma-slr/prompts/protocol_builder.md" },
+    { "id": "records", "label": "Sample Records", "status": "fixture_ready", "source": "skills/public/pharma-slr/evals/example_dupilumab_ad/records.sample.json" },
+    { "id": "evidence_map", "label": "Evidence Map", "status": "fixture_ready", "source": "generated from evidence_map_builder.py" },
+    { "id": "screening_labels", "label": "Human Screening Labels", "status": "fixture_ready", "source": "skills/public/pharma-slr/evals/example_dupilumab_ad/human_screening_labels.sample.json" },
+    { "id": "validation_report", "label": "Validation Report", "status": "fixture_only_warning_required", "source": "skills/public/pharma-slr/scripts/validation_report.py" }
+  ],
+  "website_use": {
+    "show_as_demo": true,
+    "allowed_claims": ["Demonstrates workflow structure", "Demonstrates traceability and fixture warning"],
+    "forbidden_claims": ["Validated performance", "Clinical conclusion", "Production recall or precision"]
+  },
+  "workspace_use": {
+    "entry_route": "/workspace/projects/demo_dupilumab_ad_slr",
+    "module_route": "/workspace/modules/precision-slr",
+    "execution_status_label": "configured workflow"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvidaraOS Explanation Review Queue",
+  "type": "object",
+  "required": ["review_queue"],
+  "properties": {
+    "fixture_only": { "type": "boolean" },
+    "review_queue": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["review_item_id", "candidate_pair", "review_dimensions", "human_decision"],
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

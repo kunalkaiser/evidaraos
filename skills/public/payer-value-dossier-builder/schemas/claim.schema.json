@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PayerDossierClaim",
+  "type": "object",
+  "required": ["claim_id", "claim", "section"],
+  "properties": {
+    "claim_id": { "type": "string" },
+    "claim": { "type": "string" },
+    "section": { "type": "string" },
+    "sources": { "type": "array", "items": { "type": "string" } },
+    "review_status": { "type": "string" }
+  },
+  "additionalProperties": true
+}
+

@@ -113,6 +113,8 @@ def build_report(inputs: dict[str, tuple[dict, bool]]) -> dict:
             f"- Conflicts: {_metric(adjudication_summary, 'conflicts')}",
             f"- Locked final labels: {_metric(adjudication_summary, 'locked_final_labels')}",
             f"- Pending adjudication: {_metric(adjudication_summary, 'pending_adjudication')}",
+            f"- Pending locked labels: {_metric(adjudication_summary, 'pending_locked_label')}",
+            f"- Lock policy: {_metric(adjudication_summary, 'lock_policy')}",
             f"- Inter-reviewer raw agreement: {_metric(inter_reviewer, 'raw_agreement')}",
             f"- Inter-reviewer Cohen's kappa: {_metric(inter_reviewer, 'cohens_kappa')}",
             "",

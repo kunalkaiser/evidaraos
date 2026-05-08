@@ -1,0 +1,43 @@
+{
+  "workspace_name": "EvidaraOS Workspace",
+  "primary_nav": [
+    { "id": "projects", "label": "Projects", "route": "/workspace/projects" },
+    { "id": "modules", "label": "Modules", "route": "/workspace/modules" },
+    { "id": "review", "label": "Human Review", "route": "/workspace/review" },
+    { "id": "validation", "label": "Validation Reports", "route": "/workspace/validation" },
+    { "id": "audit", "label": "Audit Trail", "route": "/workspace/audit-trail" }
+  ],
+  "module_nav": [
+    { "id": "precision_literature_review", "label": "Precision SLR", "route": "/workspace/modules/precision-slr" },
+    { "id": "heor_evidence_modeler", "label": "HEOR Modeler", "route": "/workspace/modules/heor" },
+    { "id": "payer_value_dossier", "label": "Payer Dossiers", "route": "/workspace/modules/payer-value-dossier" },
+    { "id": "regulatory_evidence_briefing", "label": "Regulatory Briefs", "route": "/workspace/modules/regulatory-briefing" },
+    { "id": "drug_repurposing_explorer", "label": "Repurposing Explorer", "route": "/workspace/modules/drug-repurposing" }
+  ],
+  "project_card_fields": [
+    "project_id",
+    "title",
+    "module_id",
+    "workflow_status",
+    "fixture_only",
+    "human_review_required",
+    "updated_at"
+  ],
+  "module_page_sections": [
+    "What this module does",
+    "Workflow lifecycle",
+    "Artifacts",
+    "Governance controls",
+    "Demo project",
+    "Execution status"
+  ],
+  "status_copy": {
+    "connected skill": "Connected skill: workflow scripts and governance artifacts exist in skills/public.",
+    "configured workflow": "Configured workflow: module structure exists, but live backend execution is not yet wired.",
+    "pending live execution": "Pending live execution: shown for product planning only."
+  },
+  "empty_state": {
+    "headline": "Start with a governed evidence question.",
+    "body": "Choose a module, define the question, and generate a protocol before retrieval or extraction. Demo projects use fixture-only data and are not validation evidence."
+  }
+}

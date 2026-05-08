@@ -1,0 +1,24 @@
+{
+  "fixture_only": true,
+  "inputs": [
+    {
+      "parameter": "Responder utility",
+      "category": "utility",
+      "value": 0.86,
+      "range_low": 0.8,
+      "range_high": 0.9,
+      "population": "Adults with moderate-to-severe atopic dermatitis",
+      "source": "PMID:fixture",
+      "confidence": "medium"
+    },
+    {
+      "parameter": "Annual monitoring cost",
+      "category": "cost",
+      "value": "",
+      "population": "US payer population",
+      "source": "",
+      "confidence": "low"
+    }
+  ]
+}
+

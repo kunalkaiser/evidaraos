@@ -1,0 +1,26 @@
+{
+  "fixture_only": true,
+  "diseases": [
+    {
+      "disease": "asthma",
+      "genes": ["IL4R", "IL13"],
+      "pathways": ["type 2 inflammation", "Th2 pathway"],
+      "phenotypes": ["eosinophilia", "airway inflammation"],
+      "symptoms": ["wheezing"]
+    },
+    {
+      "disease": "atopic dermatitis",
+      "genes": ["IL4R", "IL13"],
+      "pathways": ["type 2 inflammation", "Th2 pathway"],
+      "phenotypes": ["eczema", "skin inflammation", "eosinophilia"],
+      "symptoms": ["itch"]
+    },
+    {
+      "disease": "psoriasis",
+      "genes": ["TNF"],
+      "pathways": ["TNF signaling"],
+      "phenotypes": ["skin inflammation"],
+      "symptoms": ["plaque"]
+    }
+  ]
+}

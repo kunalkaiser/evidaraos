@@ -26,6 +26,10 @@
     "adjudicator_signature": { "type": "string", "default": "" },
     "adjudicator_notes": { "type": "string", "default": "" },
     "adjudicated_at": { "type": "string", "default": "" },
+    "lock_policy": {
+      "type": "string",
+      "enum": ["agreement_or_adjudicated", "adjudicated_only", "require_adjudicator_signature"]
+    },
     "timestamp": { "type": "string" }
   },
   "additionalProperties": true

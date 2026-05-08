@@ -37,6 +37,8 @@
 - Conflict types: <summary>
 - Locked final labels: <count>
 - Pending adjudication: <count>
+- Pending locked labels: <count>
+- Lock policy: <policy>
 - Raw agreement: <value>
 - Cohen's kappa: <value>
 

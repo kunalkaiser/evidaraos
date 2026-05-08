@@ -1,0 +1,71 @@
+{
+  "fixture_only": true,
+  "method_signals": [
+    {
+      "drug": "dupilumab",
+      "disease": "asthma",
+      "method_id": "knowledge_graph_reasoning",
+      "method_family": "knowledge_graph",
+      "direction": "supportive",
+      "score": 0.72,
+      "evidence_grade": "fixture_only",
+      "rationale": "Synthetic graph path connects drug, type 2 inflammation, and asthma.",
+      "limitations": ["Synthetic fixture only.", "Not validation evidence."]
+    },
+    {
+      "drug": "dupilumab",
+      "disease": "asthma",
+      "method_id": "target_based_repurposing",
+      "method_family": "target_biology",
+      "direction": "supportive",
+      "score": 0.64,
+      "evidence_grade": "fixture_only",
+      "rationale": "Fixture target pathway overlaps with disease biology.",
+      "limitations": ["Directionality requires expert review."]
+    },
+    {
+      "drug": "dupilumab",
+      "disease": "asthma",
+      "method_id": "clinical_literature_signal",
+      "method_family": "literature_and_trials",
+      "direction": "supportive",
+      "score": 0.48,
+      "evidence_grade": "fixture_only",
+      "rationale": "Fixture clinical signal is present but not validated.",
+      "limitations": ["Sample data only."]
+    },
+    {
+      "drug": "dupilumab",
+      "disease": "asthma",
+      "method_id": "real_world_usage_signal",
+      "method_family": "real_world_data",
+      "direction": "unavailable",
+      "score": 0.0,
+      "evidence_grade": "not_available",
+      "rationale": "No governed real-world dataset provided.",
+      "limitations": ["Do not infer absence of real-world use."]
+    },
+    {
+      "drug": "example drug",
+      "disease": "fixture disease",
+      "method_id": "knowledge_graph_reasoning",
+      "method_family": "knowledge_graph",
+      "direction": "supportive",
+      "score": 0.31,
+      "evidence_grade": "fixture_only",
+      "rationale": "Weak synthetic path support.",
+      "limitations": ["Synthetic fixture only."]
+    },
+    {
+      "drug": "example drug",
+      "disease": "fixture disease",
+      "method_id": "clinical_literature_signal",
+      "method_family": "literature_and_trials",
+      "direction": "conflicting",
+      "score": 0.22,
+      "evidence_grade": "fixture_only",
+      "rationale": "Fixture clinical signal conflicts with graph hypothesis.",
+      "limitations": ["Synthetic fixture only."]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvidaraOS Demo Project Manifest",
+  "type": "object",
+  "required": ["project_id", "module_id", "title", "fixture_only", "workflow_status", "artifacts"],
+  "properties": {
+    "project_id": { "type": "string" },
+    "module_id": { "type": "string" },
+    "title": { "type": "string" },
+    "fixture_only": { "type": "boolean" },
+    "fixture_warning": { "type": "string" },
+    "workflow_status": { "type": "string" },
+    "artifacts": {
+      "type": "array",
+      "items": { "type": "object", "required": ["id", "label", "status"], "additionalProperties": true }
+    },
+    "website_use": { "type": "object", "additionalProperties": true },
+    "workspace_use": { "type": "object", "additionalProperties": true }
+  },
+  "additionalProperties": true
+}

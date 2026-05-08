@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvidaraOS Evidence Signal Extraction",
+  "type": "object",
+  "required": ["records"],
+  "properties": {
+    "fixture_only": { "type": "boolean" },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["record_id", "signals"],
+        "properties": {
+          "record_id": { "type": "string" },
+          "source": { "type": "string" },
+          "signals": { "type": "object" },
+          "human_review_required": { "type": "boolean" }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

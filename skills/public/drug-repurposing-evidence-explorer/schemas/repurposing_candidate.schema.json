@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RepurposingCandidate",
+  "type": "object",
+  "required": ["candidate", "indication"],
+  "properties": {
+    "candidate": { "type": "string" },
+    "indication": { "type": "string" },
+    "mechanistic_plausibility": { "type": "number", "minimum": 0 },
+    "clinical_evidence": { "type": "number", "minimum": 0 },
+    "safety_transfer": { "type": "number", "minimum": 0 },
+    "unmet_need": { "type": "number", "minimum": 0 },
+    "reasons": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}
+

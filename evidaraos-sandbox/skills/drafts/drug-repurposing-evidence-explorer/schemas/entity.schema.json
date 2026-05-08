@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvidaraOS Biomedical Entity Extraction",
+  "type": "object",
+  "required": ["records"],
+  "properties": {
+    "entity_extraction_method": { "type": "string" },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["record_id", "entities"],
+        "properties": {
+          "record_id": { "type": "string" },
+          "source": { "type": "string" },
+          "entities": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["text", "type"],
+              "properties": {
+                "text": { "type": "string" },
+                "type": { "type": "string" },
+                "normal_id": { "type": "string" },
+                "confidence": { "type": "string" }
+              },
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

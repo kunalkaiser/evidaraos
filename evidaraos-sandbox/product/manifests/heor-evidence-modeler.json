@@ -1,0 +1,50 @@
+{
+  "id": "heor_evidence_modeler",
+  "display_name": "HEOR Evidence Modeler",
+  "short_name": "HEOR Modeler",
+  "mapped_skill": "heor-evidence-modeler",
+  "status": "connected skill",
+  "public_route": "/solutions/heor",
+  "workspace_route": "/workspace/modules/heor",
+  "positioning": {
+    "one_liner": "Traceable model-input preparation for HEOR teams and health economists.",
+    "primary_users": ["HEOR", "Market access", "Health economics"],
+    "jobs_to_be_done": [
+      "Define a decision problem and model input needs.",
+      "Extract utilities, event rates, costs, resource use, and uncertainty ranges.",
+      "Track assumptions and weak evidence before modeling.",
+      "Prepare review-ready input tables, evidence maps, and validation artifacts."
+    ]
+  },
+  "workflow": [
+    { "step": 1, "label": "Model Scope" },
+    { "step": 2, "label": "Evidence Needs" },
+    { "step": 3, "label": "Input Extraction" },
+    { "step": 4, "label": "Evidence Map" },
+    { "step": 5, "label": "Assumption Register" },
+    { "step": 6, "label": "Evidence Readiness" },
+    { "step": 7, "label": "Health Economist Review" },
+    { "step": 8, "label": "Validation and Audit" }
+  ],
+  "governance": {
+    "human_review": true,
+    "audit_trail": true,
+    "validation_report": true,
+    "fixture_warning": true
+  },
+  "artifacts": [
+    { "id": "model_scope", "label": "Model Scope", "type": "protocol" },
+    { "id": "model_input_table", "label": "Model Input Table", "type": "extraction" },
+    { "id": "evidence_map", "label": "Evidence Map", "type": "evidence_map" },
+    { "id": "assumption_register", "label": "Assumption Register", "type": "validation" },
+    { "id": "evidence_readiness", "label": "Evidence Readiness", "type": "validation" },
+    { "id": "review_queue", "label": "Health Economist Review Queue", "type": "human_review" },
+    { "id": "audit_trail", "label": "Audit Trail", "type": "audit" }
+  ],
+  "demo_project_id": "demo_dupilumab_heor_inputs",
+  "guardrails": [
+    "Do not calculate final ICER, QALY, or budget impact outputs without a validated model.",
+    "Do not invent missing input values.",
+    "Every input must have source provenance, uncertainty, or an assumption flag."
+  ]
+}

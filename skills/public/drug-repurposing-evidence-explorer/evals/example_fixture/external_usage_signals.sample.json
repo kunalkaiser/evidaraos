@@ -1,0 +1,16 @@
+{
+  "fixture_only": true,
+  "signals": [
+    {
+      "candidate_pair": "dupilumab -> asthma",
+      "usage_signal_score": 0.42,
+      "source": "synthetic_fixture_usage_signal",
+      "interpretation": "Fixture-only external usage signal for smoke testing.",
+      "limitations": [
+        "Synthetic fixture only.",
+        "Not EMR evidence.",
+        "Not suitable for validation or marketing claims."
+      ]
+    }
+  ]
+}

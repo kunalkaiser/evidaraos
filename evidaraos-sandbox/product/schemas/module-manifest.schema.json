@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvidaraOS Product Module Manifest",
+  "type": "object",
+  "required": [
+    "id",
+    "display_name",
+    "mapped_skill",
+    "status",
+    "public_route",
+    "workspace_route",
+    "positioning",
+    "workflow",
+    "governance",
+    "artifacts"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "display_name": { "type": "string" },
+    "short_name": { "type": "string" },
+    "mapped_skill": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": ["connected skill", "configured workflow", "pending live execution"]
+    },
+    "public_route": { "type": "string" },
+    "workspace_route": { "type": "string" },
+    "positioning": {
+      "type": "object",
+      "required": ["one_liner", "primary_users", "jobs_to_be_done"],
+      "additionalProperties": true
+    },
+    "workflow": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["step", "label"],
+        "additionalProperties": true
+      }
+    },
+    "governance": {
+      "type": "object",
+      "required": ["human_review", "audit_trail", "validation_report", "fixture_warning"],
+      "additionalProperties": true
+    },
+    "artifacts": {
+      "type": "array",
+      "items": { "type": "object", "required": ["id", "label", "type"], "additionalProperties": true }
+    },
+    "demo_project_id": { "type": "string" },
+    "guardrails": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}

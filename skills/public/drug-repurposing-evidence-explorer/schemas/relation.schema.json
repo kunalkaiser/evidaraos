@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvidaraOS Biomedical Relation Extraction",
+  "type": "object",
+  "required": ["relations"],
+  "properties": {
+    "relation_extraction_method": { "type": "string" },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["subject", "predicate", "object"],
+        "properties": {
+          "record_id": { "type": "string" },
+          "source": { "type": "string" },
+          "subject": { "type": "string" },
+          "subject_type": { "type": "string" },
+          "predicate": { "type": "string" },
+          "object": { "type": "string" },
+          "object_type": { "type": "string" },
+          "confidence": { "type": "string" },
+          "human_review_required": { "type": "boolean" }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

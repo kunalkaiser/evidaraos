@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvidaraOS Disease Similarity Output",
+  "type": "object",
+  "required": ["query_disease", "similar_diseases"],
+  "properties": {
+    "fixture_only": { "type": "boolean" },
+    "query_disease": { "type": "string" },
+    "query_features": { "type": "array", "items": { "type": "string" } },
+    "similar_diseases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["disease", "similarity_score", "shared_features"],
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

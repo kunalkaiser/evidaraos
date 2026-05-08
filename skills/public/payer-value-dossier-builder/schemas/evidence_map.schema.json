@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvidaraOS Evidence Map",
+  "type": "object",
+  "required": ["nodes", "edges"],
+  "properties": {
+    "fixture_only": { "type": "boolean" },
+    "nodes": { "type": "array", "items": { "type": "object", "required": ["id", "type"], "additionalProperties": true } },
+    "edges": { "type": "array", "items": { "type": "object", "required": ["source", "target", "predicate"], "additionalProperties": true } }
+  },
+  "additionalProperties": true
+}

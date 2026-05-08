@@ -1,0 +1,22 @@
+{
+  "fixture_only": true,
+  "target_evidence": [
+    {
+      "target": "IL4R",
+      "disease": "fixture inflammatory disease",
+      "data_type": "known_drug",
+      "score": 0.7,
+      "source": "OpenTargets:fixture",
+      "directionality": "pathway modulation"
+    },
+    {
+      "target": "IL13",
+      "disease": "fixture disease",
+      "data_type": "literature",
+      "score": 0.4,
+      "source": "PMID:fixture",
+      "directionality": "unknown"
+    }
+  ]
+}
+

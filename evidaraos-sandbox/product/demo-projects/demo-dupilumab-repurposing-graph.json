@@ -1,0 +1,25 @@
+{
+  "project_id": "demo_dupilumab_repurposing_graph",
+  "module_id": "drug_repurposing_explorer",
+  "title": "Dupilumab Drug Repurposing Evidence Graph Demo",
+  "fixture_only": true,
+  "fixture_warning": "These results are from sample fixture data and are not validation evidence.",
+  "workflow_status": "fixture_ready",
+  "question": "What mechanistic graph paths might surface drug-disease repurposing hypotheses for dupilumab?",
+  "artifacts": [
+    { "id": "literature_records", "label": "Sample Literature Records", "status": "fixture_ready", "source": "skills/public/drug-repurposing-evidence-explorer/evals/example_fixture/literature_records.sample.json" },
+    { "id": "entities", "label": "Extracted Entities", "status": "configured_workflow", "source": "skills/public/drug-repurposing-evidence-explorer/scripts/entity_extraction.py" },
+    { "id": "knowledge_graph", "label": "Knowledge Graph", "status": "configured_workflow", "source": "skills/public/drug-repurposing-evidence-explorer/scripts/knowledge_graph_builder.py" },
+    { "id": "candidate_links", "label": "Candidate Links", "status": "configured_workflow", "source": "skills/public/drug-repurposing-evidence-explorer/scripts/repurposing_link_prediction.py" }
+  ],
+  "website_use": {
+    "show_as_demo": true,
+    "allowed_claims": ["Demonstrates hypothesis graph workflow", "Demonstrates evidence path explanation"],
+    "forbidden_claims": ["Therapy recommendation", "Causal proof", "Clinical validation"]
+  },
+  "workspace_use": {
+    "entry_route": "/workspace/projects/demo_dupilumab_repurposing_graph",
+    "module_route": "/workspace/modules/drug-repurposing",
+    "execution_status_label": "configured workflow"
+  }
+}

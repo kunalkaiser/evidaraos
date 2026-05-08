@@ -1,0 +1,19 @@
+{
+  "manifest_version": "2026-05-06",
+  "runtime": {
+    "name": "DeerFlow",
+    "license": "MIT",
+    "attribution_required": true,
+    "public_product_brand": "EvidaraOS"
+  },
+  "modules": [
+    "precision-literature-review.json",
+    "heor-evidence-modeler.json",
+    "payer-value-dossier-builder.json",
+    "regulatory-evidence-briefing.json",
+    "drug-repurposing-evidence-explorer.json",
+    "evidence-governance-layer.json"
+  ],
+  "shared_lifecycle": "../taxonomy/workflow-lifecycle.md",
+  "artifact_taxonomy": "../taxonomy/artifact-taxonomy.json"
+}

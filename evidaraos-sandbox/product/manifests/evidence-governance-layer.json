@@ -1,0 +1,47 @@
+{
+  "id": "evidence_governance",
+  "display_name": "Evidence Governance & Validation Layer",
+  "short_name": "Governance",
+  "mapped_skill": "shared governance scripts across EvidenceOS skills",
+  "status": "connected skill",
+  "public_route": "/governance",
+  "workspace_route": "/workspace/validation",
+  "positioning": {
+    "one_liner": "Human review, validation, and audit controls across EvidenceOS evidence workflows.",
+    "primary_users": ["Evidence quality", "Regulatory operations", "HTA teams", "Platform administrators"],
+    "jobs_to_be_done": [
+      "Route AI-assisted outputs to structured human review.",
+      "Support second review, adjudication, and override reasons.",
+      "Generate validation reports without making unsupported performance claims.",
+      "Preserve project manifests, audit trails, tool metadata, and fixture-only warnings."
+    ]
+  },
+  "workflow": [
+    { "step": 1, "label": "Human Review Queue" },
+    { "step": 2, "label": "Reviewer Decision Capture" },
+    { "step": 3, "label": "Adjudication or Override" },
+    { "step": 4, "label": "Validation Report" },
+    { "step": 5, "label": "Audit Trail" },
+    { "step": 6, "label": "Project Manifest" }
+  ],
+  "governance": {
+    "human_review": true,
+    "dual_reviewer_adjudication": true,
+    "audit_trail": true,
+    "validation_report": true,
+    "fixture_warning": true
+  },
+  "artifacts": [
+    { "id": "review_queue", "label": "Review Queue", "type": "human_review" },
+    { "id": "adjudication_summary", "label": "Adjudication Summary", "type": "human_review" },
+    { "id": "validation_report", "label": "Validation Report", "type": "validation" },
+    { "id": "project_manifest", "label": "Project Manifest", "type": "audit" },
+    { "id": "audit_trail", "label": "Audit Trail", "type": "audit" }
+  ],
+  "demo_project_id": "demo_governance_pack",
+  "guardrails": [
+    "Do not claim real-world model performance from fixture-only smoke tests.",
+    "Do not hide AI decisions that were overridden by a human reviewer.",
+    "Do not omit tool, prompt, source, timestamp, or provenance fields when available."
+  ]
+}

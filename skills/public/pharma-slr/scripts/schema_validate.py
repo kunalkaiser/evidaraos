@@ -69,7 +69,16 @@ def validate_instance(instance: Any, schema: dict, path: str = "$") -> list[str]
     return errors
 
 
-def validate_payload(payload: Any, schema: dict) -> dict:
+def validate_payload(payload: Any, schema: dict, items_key: str | None = None) -> dict:
+    if items_key:
+        if not isinstance(payload, dict):
+            return {"valid": False, "errors": [f"$: --items-key {items_key!r} requires a JSON object payload"]}
+        if items_key not in payload:
+            return {"valid": False, "errors": [f"$.{items_key}: items key not found"]}
+        payload = payload[items_key]
+        if not isinstance(payload, list):
+            return {"valid": False, "errors": [f"$.{items_key}: expected array, got {type(payload).__name__}"]}
+
     if isinstance(payload, list):
         item_schema = schema.get("items") or schema
         errors = []
@@ -84,6 +93,7 @@ def _build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Validate JSON against a local pharma-slr schema subset.")
     parser.add_argument("--schema", required=True)
     parser.add_argument("--json", required=True)
+    parser.add_argument("--items-key", help="optional object key containing an array of records to validate with the schema")
     return parser
 
 
@@ -92,7 +102,7 @@ def main() -> int:
     try:
         schema = json.loads(Path(args.schema).read_text(encoding="utf-8"))
         payload = json.loads(Path(args.json).read_text(encoding="utf-8"))
-        result = validate_payload(payload, schema)
+        result = validate_payload(payload, schema, args.items_key)
     except Exception as exc:
         print(f"schema_validate.py: {exc}", file=sys.stderr)
         return 1

@@ -1,0 +1,20 @@
+{
+  "fixture_only": true,
+  "evidence": [
+    {
+      "dimension": "benefit",
+      "finding": "Improvement versus comparator in a fixture endpoint.",
+      "population": "fixture population",
+      "source": "NCTfixture",
+      "certainty": "not_assessed"
+    },
+    {
+      "dimension": "risk",
+      "finding": "Fixture safety event requires review.",
+      "population": "fixture population",
+      "source": "PMID:fixture",
+      "certainty": "not_assessed"
+    }
+  ]
+}
+

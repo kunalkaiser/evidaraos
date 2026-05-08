@@ -1,0 +1,25 @@
+{
+  "project_id": "demo_dupilumab_regulatory_briefing",
+  "module_id": "regulatory_evidence_briefing",
+  "title": "Dupilumab Regulatory Evidence Briefing Demo",
+  "fixture_only": true,
+  "fixture_warning": "These results are from sample fixture data and are not validation evidence.",
+  "workflow_status": "fixture_ready",
+  "question": "How should benefit-risk evidence and uncertainty be structured for regulatory strategy review?",
+  "artifacts": [
+    { "id": "context", "label": "Regulatory Context", "status": "configured_workflow", "source": "skills/public/regulatory-evidence-briefing/scripts/regulatory_context.py" },
+    { "id": "evidence", "label": "Sample Benefit-Risk Evidence", "status": "fixture_ready", "source": "skills/public/regulatory-evidence-briefing/evals/example_fixture/evidence.sample.json" },
+    { "id": "language_guardrail", "label": "Language Guardrail", "status": "configured_workflow", "source": "skills/public/regulatory-evidence-briefing/scripts/language_guardrail.py" },
+    { "id": "uncertainty_register", "label": "Uncertainty Register", "status": "configured_workflow", "source": "skills/public/regulatory-evidence-briefing/scripts/uncertainty_register.py" }
+  ],
+  "website_use": {
+    "show_as_demo": true,
+    "allowed_claims": ["Demonstrates conservative evidence structuring", "Demonstrates overclaim guardrails"],
+    "forbidden_claims": ["Regulatory approval prediction", "Agency outcome", "Safety or efficacy proof"]
+  },
+  "workspace_use": {
+    "entry_route": "/workspace/projects/demo_dupilumab_regulatory_briefing",
+    "module_route": "/workspace/modules/regulatory-briefing",
+    "execution_status_label": "configured workflow"
+  }
+}

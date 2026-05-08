@@ -1,0 +1,50 @@
+{
+  "id": "regulatory_evidence_briefing",
+  "display_name": "Regulatory Evidence Briefing",
+  "short_name": "Regulatory Briefing",
+  "mapped_skill": "regulatory-evidence-briefing",
+  "status": "connected skill",
+  "public_route": "/solutions/regulatory-briefing",
+  "workspace_route": "/workspace/modules/regulatory-briefing",
+  "positioning": {
+    "one_liner": "Conservative, traceable regulatory evidence briefings for strategy teams.",
+    "primary_users": ["Regulatory affairs", "Clinical strategy", "Medical writing"],
+    "jobs_to_be_done": [
+      "Define agency, indication, development stage, and briefing scope.",
+      "Structure benefit-risk evidence and uncertainty.",
+      "Guard against overclaiming in regulatory language.",
+      "Generate regulatory review queues, source appendices, and audit trails."
+    ]
+  },
+  "workflow": [
+    { "step": 1, "label": "Regulatory Context" },
+    { "step": 2, "label": "Precedent and Evidence Review" },
+    { "step": 3, "label": "Benefit-Risk Table" },
+    { "step": 4, "label": "Evidence Map" },
+    { "step": 5, "label": "Uncertainty Register" },
+    { "step": 6, "label": "Language Guardrail" },
+    { "step": 7, "label": "Regulatory Review" },
+    { "step": 8, "label": "Briefing and Audit" }
+  ],
+  "governance": {
+    "human_review": true,
+    "audit_trail": true,
+    "validation_report": true,
+    "fixture_warning": true
+  },
+  "artifacts": [
+    { "id": "regulatory_context", "label": "Regulatory Context", "type": "protocol" },
+    { "id": "benefit_risk_table", "label": "Benefit-Risk Table", "type": "extraction" },
+    { "id": "evidence_map", "label": "Evidence Map", "type": "evidence_map" },
+    { "id": "uncertainty_register", "label": "Uncertainty Register", "type": "validation" },
+    { "id": "language_guardrail", "label": "Language Guardrail", "type": "validation" },
+    { "id": "regulatory_briefing", "label": "Regulatory Briefing", "type": "report" },
+    { "id": "audit_trail", "label": "Audit Trail", "type": "audit" }
+  ],
+  "demo_project_id": "demo_dupilumab_regulatory_briefing",
+  "guardrails": [
+    "Do not predict approval or agency outcomes.",
+    "Separate evidence, uncertainty, and interpretation.",
+    "Do not say evidence proves safety or efficacy without validated source support."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "project_id": "demo_dupilumab_heor_inputs",
+  "module_id": "heor_evidence_modeler",
+  "title": "Dupilumab HEOR Model Inputs Demo",
+  "fixture_only": true,
+  "fixture_warning": "These results are from sample fixture data and are not validation evidence.",
+  "workflow_status": "fixture_ready",
+  "question": "What model input candidates are available for dupilumab in atopic dermatitis from a US payer perspective?",
+  "artifacts": [
+    { "id": "model_scope", "label": "Model Scope", "status": "configured_workflow", "source": "skills/public/heor-evidence-modeler/scripts/model_scope.py" },
+    { "id": "inputs", "label": "Sample Model Inputs", "status": "fixture_ready", "source": "skills/public/heor-evidence-modeler/evals/example_fixture/inputs.sample.json" },
+    { "id": "assumption_register", "label": "Assumption Register", "status": "configured_workflow", "source": "skills/public/heor-evidence-modeler/scripts/assumption_register.py" },
+    { "id": "evidence_map", "label": "Evidence Map", "status": "fixture_ready", "source": "generated from evidence_map_builder.py" }
+  ],
+  "website_use": {
+    "show_as_demo": true,
+    "allowed_claims": ["Demonstrates HEOR input traceability", "Demonstrates assumption flagging"],
+    "forbidden_claims": ["Final ICER", "Budget impact result", "Validated economic model"]
+  },
+  "workspace_use": {
+    "entry_route": "/workspace/projects/demo_dupilumab_heor_inputs",
+    "module_route": "/workspace/modules/heor",
+    "execution_status_label": "configured workflow"
+  }
+}

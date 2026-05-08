@@ -1,0 +1,54 @@
+{
+  "artifact_categories": [
+    {
+      "id": "protocol",
+      "label": "Protocol",
+      "description": "Question framing, scope, inclusion/exclusion logic, model scope, or regulatory context."
+    },
+    {
+      "id": "retrieval",
+      "label": "Retrieval",
+      "description": "Search strategy, source query, data pull, or upstream evidence collection artifact."
+    },
+    {
+      "id": "evidence_map",
+      "label": "Evidence Map",
+      "description": "Traceable graph or map linking records, claims, parameters, or findings to evidence signals."
+    },
+    {
+      "id": "human_review",
+      "label": "Human Review",
+      "description": "Reviewer queue, reviewer decisions, overrides, adjudication, and review notes."
+    },
+    {
+      "id": "extraction",
+      "label": "Extraction",
+      "description": "Structured study, model input, claim, benefit-risk, or hypothesis extraction."
+    },
+    {
+      "id": "validation",
+      "label": "Validation",
+      "description": "Performance metrics, validation report, audit completeness, and fixture-only warnings."
+    },
+    {
+      "id": "report",
+      "label": "Report",
+      "description": "Final markdown, dossier, briefing, evidence table, PRISMA summary, or hypothesis report."
+    },
+    {
+      "id": "audit",
+      "label": "Audit",
+      "description": "Project manifest, audit trail, source provenance, script metadata, and hash references."
+    }
+  ],
+  "status_labels": [
+    "not_started",
+    "configured_workflow",
+    "pending_live_execution",
+    "fixture_ready",
+    "human_review_required",
+    "validated_with_fixture_only_warning",
+    "ready_for_domain_review"
+  ],
+  "fixture_warning": "These results are from sample fixture data and are not validation evidence."
+}

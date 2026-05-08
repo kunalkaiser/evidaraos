@@ -1,0 +1,25 @@
+{
+  "project_id": "demo_dupilumab_payer_dossier",
+  "module_id": "payer_value_dossier",
+  "title": "Dupilumab Payer Value Dossier Demo",
+  "fixture_only": true,
+  "fixture_warning": "These results are from sample fixture data and are not validation evidence.",
+  "workflow_status": "fixture_ready",
+  "question": "What evidence blocks and claim traceability are needed for a payer value dossier?",
+  "artifacts": [
+    { "id": "scope", "label": "Dossier Scope", "status": "fixture_ready", "source": "skills/public/payer-value-dossier-builder/evals/example_fixture/scope.sample.json" },
+    { "id": "claims", "label": "Sample Claims", "status": "fixture_ready", "source": "skills/public/payer-value-dossier-builder/evals/example_fixture/claims.sample.json" },
+    { "id": "claim_traceability", "label": "Claim Traceability Matrix", "status": "configured_workflow", "source": "skills/public/payer-value-dossier-builder/scripts/claim_traceability.py" },
+    { "id": "gap_check", "label": "Dossier Gap Check", "status": "configured_workflow", "source": "skills/public/payer-value-dossier-builder/scripts/dossier_gap_check.py" }
+  ],
+  "website_use": {
+    "show_as_demo": true,
+    "allowed_claims": ["Demonstrates claim traceability", "Demonstrates unsupported-claim flagging"],
+    "forbidden_claims": ["Payer acceptance prediction", "Formulary outcome", "Pricing recommendation"]
+  },
+  "workspace_use": {
+    "entry_route": "/workspace/projects/demo_dupilumab_payer_dossier",
+    "module_route": "/workspace/modules/payer-value-dossier",
+    "execution_status_label": "configured workflow"
+  }
+}

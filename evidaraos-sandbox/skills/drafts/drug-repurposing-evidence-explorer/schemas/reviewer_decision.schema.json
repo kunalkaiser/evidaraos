@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvidaraOSReviewerDecision",
+  "type": "object",
+  "required": ["module", "item_id", "ai_decision", "reviewer_id", "timestamp"],
+  "properties": {
+    "module": { "type": "string" },
+    "item_id": { "type": "string" },
+    "ai_decision": { "type": "string" },
+    "human_decision": { "type": "string" },
+    "second_review_needed": { "type": "boolean" },
+    "rationale": { "type": "string" },
+    "risk_flags": { "type": "array", "items": { "type": "string" } },
+    "confidence": {},
+    "reviewer_id": { "type": "string" },
+    "notes": { "type": "string" },
+    "timestamp": { "type": "string" }
+  },
+  "additionalProperties": true
+}
+

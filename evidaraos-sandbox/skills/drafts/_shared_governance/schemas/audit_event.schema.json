@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvidaraOSAuditEvent",
+  "type": "object",
+  "required": ["review_id", "event_id", "event_type", "module", "record_id", "timestamp", "tool_name", "tool_version", "script_path", "input_hash", "output_hash"],
+  "properties": {
+    "review_id": { "type": "string" },
+    "event_id": { "type": "string" },
+    "event_type": { "type": "string" },
+    "module": { "type": "string" },
+    "record_id": { "type": "string" },
+    "timestamp": { "type": "string" },
+    "tool_name": { "type": "string" },
+    "tool_version": { "type": "string" },
+    "script_path": { "type": "string" },
+    "prompt_name": { "type": "string" },
+    "prompt_version": { "type": "string" },
+    "input_hash": { "type": "string" },
+    "output_hash": { "type": "string" },
+    "model_name": { "type": "string" },
+    "query_string": { "type": "string" },
+    "ai_decision": { "type": "string" },
+    "human_decision": { "type": "string" },
+    "final_decision": { "type": "string" },
+    "rationale": { "type": "string" },
+    "provenance": { "type": "object" }
+  },
+  "additionalProperties": true
+}
+

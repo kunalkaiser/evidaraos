@@ -1,0 +1,49 @@
+{
+  "id": "payer_value_dossier",
+  "display_name": "Payer Value Dossier Builder",
+  "short_name": "Payer Dossier",
+  "mapped_skill": "payer-value-dossier-builder",
+  "status": "connected skill",
+  "public_route": "/solutions/payer-value-dossier",
+  "workspace_route": "/workspace/modules/payer-value-dossier",
+  "positioning": {
+    "one_liner": "Evidence-traceable payer dossier preparation for market access teams.",
+    "primary_users": ["Market access", "HEOR", "Medical affairs"],
+    "jobs_to_be_done": [
+      "Structure disease burden, unmet need, comparator, clinical, and HEOR evidence.",
+      "Trace every payer-facing claim to a source or assumption flag.",
+      "Identify dossier gaps before human review.",
+      "Generate a review-ready value dossier shell with audit-ready provenance."
+    ]
+  },
+  "workflow": [
+    { "step": 1, "label": "Dossier Scope" },
+    { "step": 2, "label": "Evidence Blocks" },
+    { "step": 3, "label": "Claim Traceability" },
+    { "step": 4, "label": "Evidence Map" },
+    { "step": 5, "label": "Gap Check" },
+    { "step": 6, "label": "Market Access Review" },
+    { "step": 7, "label": "Dossier Draft" },
+    { "step": 8, "label": "Validation and Audit" }
+  ],
+  "governance": {
+    "human_review": true,
+    "audit_trail": true,
+    "validation_report": true,
+    "fixture_warning": true
+  },
+  "artifacts": [
+    { "id": "dossier_scope", "label": "Dossier Scope", "type": "protocol" },
+    { "id": "claim_matrix", "label": "Claim Traceability Matrix", "type": "extraction" },
+    { "id": "evidence_map", "label": "Evidence Map", "type": "evidence_map" },
+    { "id": "gap_check", "label": "Dossier Gap Check", "type": "validation" },
+    { "id": "value_dossier", "label": "Value Dossier Draft", "type": "report" },
+    { "id": "audit_trail", "label": "Audit Trail", "type": "audit" }
+  ],
+  "demo_project_id": "demo_dupilumab_payer_dossier",
+  "guardrails": [
+    "Do not predict payer decisions, formulary status, or pricing acceptance.",
+    "Unsupported claims must remain flagged.",
+    "Economic claims must be sourced, modeled, or labeled as assumptions."
+  ]
+}

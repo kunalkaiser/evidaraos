@@ -1,0 +1,18 @@
+{
+  "fixture_only": true,
+  "claims": [
+    {
+      "claim_id": "c1",
+      "section": "clinical_evidence",
+      "claim": "Dupilumab improved signs and symptoms in the studied population.",
+      "sources": ["PMID:fixture"]
+    },
+    {
+      "claim_id": "c2",
+      "section": "heor_evidence",
+      "claim": "The product will reduce total payer costs.",
+      "sources": []
+    }
+  ]
+}
+

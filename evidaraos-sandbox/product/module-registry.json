@@ -1,0 +1,76 @@
+{
+  "modules": [
+    {
+      "id": "precision_literature_review",
+      "display_name": "Precision Literature Review",
+      "short_name": "Precision SLR",
+      "mapped_skill": "pharma-slr",
+      "status": "connected skill",
+      "route": "/workspace/modules/precision-slr",
+      "public_route": "/solutions/systematic-literature-review",
+      "description": "Precision-controlled biomedical literature review with concept retrieval, screening prioritization, human adjudication, PRISMA-style reporting, validation reports, and audit-ready provenance.",
+      "primary_users": ["Evidence generation", "Medical affairs", "HEOR", "Regulatory"],
+      "governance_level": "validation-ready"
+    },
+    {
+      "id": "heor_evidence_modeler",
+      "display_name": "HEOR Evidence Modeler",
+      "short_name": "HEOR Modeler",
+      "mapped_skill": "heor-evidence-modeler",
+      "status": "configured workflow",
+      "route": "/workspace/modules/heor",
+      "public_route": "/solutions/heor",
+      "description": "Structured extraction of utilities, event rates, costs, resource utilization, assumptions, and uncertainty ranges for health economist review.",
+      "primary_users": ["HEOR", "Market access", "Health economics"],
+      "governance_level": "validation-ready workflow"
+    },
+    {
+      "id": "payer_value_dossier",
+      "display_name": "Payer Value Dossier Builder",
+      "short_name": "Payer Dossier",
+      "mapped_skill": "payer-value-dossier-builder",
+      "status": "configured workflow",
+      "route": "/workspace/modules/payer-value-dossier",
+      "public_route": "/solutions/payer-value-dossier",
+      "description": "Evidence-traceable payer dossier generation across disease burden, clinical evidence, comparator landscape, HTA precedents, HEOR assumptions, and value narrative.",
+      "primary_users": ["Market access", "HEOR", "Medical affairs"],
+      "governance_level": "validation-ready workflow"
+    },
+    {
+      "id": "regulatory_evidence_briefing",
+      "display_name": "Regulatory Evidence Briefing",
+      "short_name": "Regulatory Briefing",
+      "mapped_skill": "regulatory-evidence-briefing",
+      "status": "configured workflow",
+      "route": "/workspace/modules/regulatory-briefing",
+      "public_route": "/solutions/regulatory-briefing",
+      "description": "Conservative regulatory evidence synthesis with agency precedent review, benefit-risk structuring, uncertainty capture, and human regulatory review.",
+      "primary_users": ["Regulatory affairs", "Clinical strategy", "Medical writing"],
+      "governance_level": "validation-ready workflow"
+    },
+    {
+      "id": "drug_repurposing_explorer",
+      "display_name": "Drug Repurposing Evidence Explorer",
+      "short_name": "Repurposing Explorer",
+      "mapped_skill": "drug-repurposing-evidence-explorer",
+      "status": "configured workflow",
+      "route": "/workspace/modules/drug-repurposing",
+      "public_route": "/solutions/drug-repurposing",
+      "description": "Repurposing hypothesis exploration across mechanism, disease association, clinical evidence, safety transfer, knowledge graph evidence paths, living evidence monitoring, and validation readiness.",
+      "primary_users": ["R&D strategy", "Translational science", "Business development"],
+      "governance_level": "validation-ready workflow"
+    },
+    {
+      "id": "evidence_governance",
+      "display_name": "Evidence Governance & Validation Layer",
+      "short_name": "Governance",
+      "mapped_skill": "pharma-slr governance components",
+      "status": "connected skill",
+      "route": "/workspace/validation",
+      "public_route": "/governance",
+      "description": "Human-in-the-loop review, dual-reviewer adjudication, validation metrics, audit trails, project manifests, and fixture-only warnings across evidence workflows.",
+      "primary_users": ["Evidence quality", "Regulatory operations", "HTA teams"],
+      "governance_level": "validation-ready reference"
+    }
+  ]
+}

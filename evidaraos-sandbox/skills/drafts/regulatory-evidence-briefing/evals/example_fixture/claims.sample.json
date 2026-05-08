@@ -1,0 +1,14 @@
+{
+  "fixture_only": true,
+  "claims": [
+    {
+      "claim_id": "r1",
+      "claim": "The evidence supports further discussion of benefit-risk."
+    },
+    {
+      "claim_id": "r2",
+      "claim": "This will be approved because it proves efficacy."
+    }
+  ]
+}
+

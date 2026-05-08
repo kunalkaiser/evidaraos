@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BenefitRiskEvidence",
+  "type": "object",
+  "required": ["dimension", "finding", "source"],
+  "properties": {
+    "dimension": { "type": "string", "enum": ["benefit", "risk", "uncertainty", "context"] },
+    "finding": { "type": "string" },
+    "population": { "type": "string" },
+    "source": { "type": "string" },
+    "certainty": { "type": "string" },
+    "regulatory_note": { "type": "string" }
+  },
+  "additionalProperties": true
+}
+

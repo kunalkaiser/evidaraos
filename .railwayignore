@@ -4,3 +4,11 @@
 !frontend/
 !frontend/**
 !railway.json
+
+# Never upload local dependencies or generated Next artifacts.
+frontend/node_modules/
+frontend/.next/
+frontend/test-results/
+frontend/playwright-report/
+frontend/.turbo/
+frontend/.vercel/

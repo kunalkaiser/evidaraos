@@ -33,6 +33,8 @@ interface AuthProviderProps {
   initialUser: User | null;
 }
 
+const EVIDARAOS_WORKSPACE_USER_ID = "evidaraos-workspace";
+
 /**
  * AuthProvider - Unified authentication context for the application
  *
@@ -54,6 +56,8 @@ export function AuthProvider({ children, initialUser }: AuthProviderProps) {
    * Used when initialUser might be stale (e.g., after tab was inactive)
    */
   const refreshUser = useCallback(async () => {
+    if (user?.id === EVIDARAOS_WORKSPACE_USER_ID) return;
+
     try {
       setIsLoading(true);
       const res = await fetch("/api/v1/auth/me", {
@@ -77,7 +81,7 @@ export function AuthProvider({ children, initialUser }: AuthProviderProps) {
     } finally {
       setIsLoading(false);
     }
-  }, [pathname, router]);
+  }, [pathname, router, user?.id]);
 
   /**
    * Logout - call FastAPI logout endpoint and clear local state
@@ -110,6 +114,7 @@ export function AuthProvider({ children, initialUser }: AuthProviderProps) {
   useEffect(() => {
     const handleVisibilityChange = () => {
       if (document.visibilityState !== "visible" || user === null) return;
+      if (user.id === EVIDARAOS_WORKSPACE_USER_ID) return;
       const now = Date.now();
       if (now - lastCheckRef.current < 60_000) return;
       lastCheckRef.current = now;

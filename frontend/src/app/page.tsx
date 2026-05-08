@@ -16,6 +16,7 @@ import {
   Workflow,
 } from "lucide-react";
 
+import { EvidenceQueryIntake } from "@/evidaraos/evidence-query-intake";
 import { Eyebrow, PageShell } from "@/evidaraos/site";
 import { modules } from "@/evidaraos/product-data";
 
@@ -88,68 +89,6 @@ const evidenceRows = [
   ["Extraction", "study fields", "confidence noted"],
   ["Report", "PRISMA + citations", "draft package"],
 ];
-
-function QueryIntakePanel() {
-  return (
-    <div className="relative overflow-hidden border border-[#8ec7c1]/20 bg-[#071523] shadow-2xl shadow-black/30">
-      <div className="absolute inset-0 opacity-35 [background-image:linear-gradient(rgba(142,199,193,0.14)_1px,transparent_1px),linear-gradient(90deg,rgba(142,199,193,0.1)_1px,transparent_1px)] [background-size:34px_34px]" />
-      <div className="relative border-b border-white/10 p-5">
-        <div className="flex items-center justify-between gap-4">
-          <div>
-            <p className="text-xs font-semibold tracking-[0.22em] text-[#8ec7c1] uppercase">
-              Evidence Query Intake
-            </p>
-            <p className="mt-2 text-sm text-[#aebbc5]">
-              Convert a question into a governed workflow.
-            </p>
-          </div>
-          <span className="border border-[#d7b46a]/35 px-3 py-1 text-xs text-[#e2c57f]">
-            configured workflow
-          </span>
-        </div>
-      </div>
-
-      <div className="relative p-5">
-        <label
-          htmlFor="evidence-question"
-          className="text-sm font-medium text-[#f8f1e3]"
-        >
-          Evidence question
-        </label>
-        <div className="mt-3 grid gap-3 md:grid-cols-[1fr_auto]">
-          <input
-            id="evidence-question"
-            name="question"
-            className="h-14 border border-white/10 bg-[#08111f] px-4 text-base text-[#f8f1e3] outline-none placeholder:text-[#738390] focus:border-[#8ec7c1]/70"
-            placeholder="Example: dupilumab safety in adults with atopic dermatitis"
-          />
-          <Link
-            href="/workspace/modules/precision-slr"
-            className="inline-flex h-14 items-center justify-center gap-2 bg-[#d7b46a] px-5 text-sm font-semibold text-[#071523] hover:bg-[#f0cc80]"
-          >
-            Start SLR workflow
-            <ArrowRight className="size-4" />
-          </Link>
-        </div>
-
-        <div className="mt-5 grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-3">
-          {[
-            ["Mode", "balanced precision"],
-            ["Sources", "PubMed / Scholar / Crossref"],
-            ["Oversight", "human review required"],
-          ].map(([label, value]) => (
-            <div key={label} className="bg-[#0b1828] p-4">
-              <p className="text-xs tracking-[0.16em] text-[#8395a3] uppercase">
-                {label}
-              </p>
-              <p className="mt-2 text-sm text-[#f8f1e3]">{value}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function EvidenceConsole() {
   return (
@@ -451,7 +390,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="space-y-5">
-              <QueryIntakePanel />
+              <EvidenceQueryIntake />
               <EvidenceConsole />
             </div>
           </div>

@@ -1149,10 +1149,10 @@ interface SpeechRecognitionErrorEvent extends Event {
 
 declare global {
   interface Window {
-    SpeechRecognition: {
+    SpeechRecognition?: {
       new (): SpeechRecognition;
     };
-    webkitSpeechRecognition: {
+    webkitSpeechRecognition?: {
       new (): SpeechRecognition;
     };
   }
@@ -1186,6 +1186,7 @@ export const PromptInputSpeechButton = ({
     ) {
       const SpeechRecognition =
         window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) return;
       const speechRecognition = new SpeechRecognition();
 
       speechRecognition.continuous = true;

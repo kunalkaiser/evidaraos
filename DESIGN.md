@@ -235,3 +235,63 @@ Never copy another site's words, claims, images, layout, logos, or case studies.
 ## Prompt Contract
 
 When building any EvidaraOS interface, first read this file. Preserve the tokens, tone, layout rules, and governance constraints. If a new visual direction is needed, update `DESIGN.md` before applying it broadly.
+
+## Website Rewrite Contract
+
+The website must not read like a systems blueprint. It should read like a serious company explaining a complex product clearly.
+
+The homepage must answer five questions, in this order:
+
+1. What is EvidaraOS?
+2. Who is it for?
+3. What work does it do?
+4. How does the work stay traceable and reviewable?
+5. What should an enterprise buyer do next?
+
+Use short, concrete language:
+
+- "Run a protocol-bound literature review."
+- "Prioritize screening without hiding uncertain records."
+- "Extract evidence into reviewable tables."
+- "Record reviewer decisions, overrides, and audit metadata."
+- "Generate reports with sources and limitations."
+
+Avoid abstract stacking:
+
+- "governed evidence intelligence layer"
+- "validation-ready evidence workflows"
+- "precision evidence operating system"
+- "AI-powered evidence transformation"
+- "audit-ready governed outputs"
+
+These phrases may appear sparingly, but never repeatedly. If a sentence needs three abstract nouns to work, rewrite it.
+
+## Homepage Content Contract
+
+Hero:
+
+- Headline: "Evidence workbench for life sciences teams."
+- Supporting copy: "EvidaraOS helps evidence, HEOR, regulatory, and market access teams search, screen, extract, validate, and report biomedical evidence with traceable human oversight."
+- CTAs: "View platform" and "Request demo"
+- Visual: product workbench, not a theoretical architecture diagram.
+
+Primary Sections:
+
+- What teams can do: five product modules with plain-language outcomes.
+- How work moves: Question -> Protocol -> Search -> Screen -> Extract -> Validate -> Report.
+- Governance: human review, adjudication, audit trail, fixture warnings, source provenance.
+- Use cases: SLR, HEOR model inputs, payer dossiers, regulatory briefings, drug repurposing hypotheses.
+
+Do not include unsupported metrics, fake customers, fake validation evidence, or fake live results.
+
+## Gemini / External AI Handoff
+
+When using Gemini, Cursor, v0, Bolt, or another code generator, provide this file as the design contract and ask the model to obey the "Website Rewrite Contract" section. The model should produce code that:
+
+- uses the existing Next.js + Tailwind stack;
+- edits only frontend routes/components unless explicitly asked;
+- preserves legal attribution pages;
+- does not expose DeerFlow branding on marketing pages;
+- keeps copy short and enterprise-facing;
+- uses product visuals, tables, rails, and workbench surfaces instead of decorative gradients;
+- labels demos and fixtures clearly.

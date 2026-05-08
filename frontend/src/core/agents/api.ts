@@ -74,7 +74,7 @@ export async function checkAgentName(
     );
   } catch {
     throw new AgentNameCheckError(
-      "Could not reach the DeerFlow backend.",
+      "Could not reach the EvidaraOS backend.",
       "backend_unreachable",
     );
   }
@@ -83,7 +83,7 @@ export async function checkAgentName(
     const err = (await res.json().catch(() => ({}))) as { detail?: string };
     if (BACKEND_UNAVAILABLE_STATUSES.has(res.status)) {
       throw new AgentNameCheckError(
-        "Could not reach the DeerFlow backend.",
+        "Could not reach the EvidaraOS backend.",
         "backend_unreachable",
       );
     }

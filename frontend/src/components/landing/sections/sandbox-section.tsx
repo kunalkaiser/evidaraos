@@ -15,9 +15,8 @@ export function SandboxSection({ className }: { className?: string }) {
       title="Agent Runtime Environment"
       subtitle={
         <p>
-          We give DeerFlow a &quot;computer&quot;, which can execute commands,
-          manage files, and run long tasks — all in a secure Docker-based
-          sandbox
+          EvidaraOS workflows can execute commands, manage files, and run long
+          tasks through a controlled runtime environment.
         </p>
       }
     >

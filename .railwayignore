@@ -1,0 +1,6 @@
+# Keep Railway frontend uploads small and deterministic.
+# The frontend Dockerfile only needs the frontend directory plus Railway config.
+*
+!frontend/
+!frontend/**
+!railway.json

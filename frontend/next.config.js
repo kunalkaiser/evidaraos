@@ -28,17 +28,6 @@ const config = {
       "http://127.0.0.1:8001",
     );
 
-    if (!process.env.NEXT_PUBLIC_LANGGRAPH_BASE_URL) {
-      rewrites.push({
-        source: "/api/langgraph",
-        destination: `${gatewayURL}/api`,
-      });
-      rewrites.push({
-        source: "/api/langgraph/:path*",
-        destination: `${gatewayURL}/api/:path*`,
-      });
-    }
-
     if (!process.env.NEXT_PUBLIC_BACKEND_BASE_URL) {
       rewrites.push({
         source: "/api/agents",
@@ -55,18 +44,6 @@ const config = {
       rewrites.push({
         source: "/api/skills/:path*",
         destination: `${gatewayURL}/api/skills/:path*`,
-      });
-
-      // Catch-all for remaining gateway API routes (models, threads, memory,
-      // mcp, artifacts, uploads, suggestions, runs, etc.) that don't have
-      // their own NEXT_PUBLIC_* env var toggle.
-      //
-      // NOTE: this must come AFTER the /api/langgraph rewrite above so that
-      // LangGraph-compatible routes keep their public prefix while Gateway
-      // receives its native /api/* paths.
-      rewrites.push({
-        source: "/api/:path*",
-        destination: `${gatewayURL}/api/:path*`,
       });
     }
 

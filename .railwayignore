@@ -1,14 +1,24 @@
-# Keep Railway frontend uploads small and deterministic.
-# The frontend Dockerfile only needs the frontend directory plus Railway config.
+# Keep Railway uploads deterministic for the split EvidaraOS services.
+# The frontend service needs frontend/. The gateway service needs backend/,
+# skills/, and deploy/railway/.
 *
 !frontend/
 !frontend/**
+!backend/
+!backend/**
+!skills/
+!skills/**
+!deploy/
+!deploy/**
 !railway.json
 
-# Never upload local dependencies or generated Next artifacts.
+# Never upload local dependencies or generated artifacts.
 frontend/node_modules/
 frontend/.next/
 frontend/test-results/
 frontend/playwright-report/
 frontend/.turbo/
 frontend/.vercel/
+backend/.venv/
+backend/**/__pycache__/
+skills/**/__pycache__/

@@ -3,12 +3,13 @@
 from __future__ import annotations
 
 import secrets
+import os
 from types import SimpleNamespace
 
 from deerflow.runtime.user_context import DEFAULT_USER_ID
 
 INTERNAL_AUTH_HEADER_NAME = "X-DeerFlow-Internal-Token"
-_INTERNAL_AUTH_TOKEN = secrets.token_urlsafe(32)
+_INTERNAL_AUTH_TOKEN = os.getenv("DEER_FLOW_INTERNAL_AUTH_TOKEN") or secrets.token_urlsafe(32)
 
 
 def create_internal_auth_headers() -> dict[str, str]:
